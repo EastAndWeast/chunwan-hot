@@ -74,10 +74,19 @@
             align-items: flex-start;
             padding: 10px 0;
             border-bottom: 1px solid #f0f0f0;
+            cursor: pointer;
+            transition: background 0.2s;
+            margin: 0 -16px;
+            padding-left: 16px;
+            padding-right: 16px;
         }
         
         .hot-item:last-child {
             border-bottom: none;
+        }
+        
+        .hot-item:hover, .hot-item:active {
+            background: #f9f9f9;
         }
         
         .rank {
@@ -138,6 +147,13 @@
         .tag-youtube { background: #ff0000; color: #fff; }
         .tag-instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: #fff; }
         
+        .click-hint {
+            font-size: 10px;
+            color: #ccc;
+            margin-left: auto;
+            flex-shrink: 0;
+        }
+        
         .refresh-btn {
             display: block;
             width: 100%;
@@ -172,6 +188,14 @@
             padding: 8px 0;
             border-bottom: 1px solid #f0f0f0;
             font-size: 13px;
+            cursor: pointer;
+        }
+        
+        .show-item:hover {
+            background: #f9f9f9;
+            margin: 0 -16px;
+            padding-left: 16px;
+            padding-right: 16px;
         }
         
         .show-item:last-child {
@@ -182,26 +206,99 @@
             color: #333;
         }
         
-        .section-tabs {
+        /* 弹窗样式 */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.6);
+            z-index: 1000;
+            justify-content: center;
+            align-items: flex-end;
+            padding: 0;
+        }
+        
+        .modal-overlay.active {
             display: flex;
-            gap: 8px;
-            margin-bottom: 12px;
-            flex-wrap: wrap;
         }
         
-        .tab {
-            padding: 6px 12px;
-            border-radius: 16px;
-            font-size: 12px;
+        .modal-content {
+            background: #fff;
+            width: 100%;
+            max-width: 500px;
+            border-radius: 20px 20px 0 0;
+            padding: 24px;
+            max-height: 70vh;
+            overflow-y: auto;
+            animation: slideUp 0.3s ease;
+        }
+        
+        @keyframes slideUp {
+            from {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .modal-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .modal-close {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
             background: #f5f5f5;
-            color: #666;
-            cursor: pointer;
             border: none;
+            font-size: 18px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
-        .tab.active {
-            background: #d32f2f;
-            color: #fff;
+        .modal-body {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #666;
+        }
+        
+        .modal-body h3 {
+            font-size: 15px;
+            color: #333;
+            margin-top: 16px;
+            margin-bottom: 8px;
+        }
+        
+        .modal-body p {
+            margin-bottom: 8px;
+        }
+        
+        .modal-tag {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            margin-right: 8px;
+            margin-bottom: 8px;
         }
     </style>
 </head>
@@ -212,7 +309,7 @@
             <div class="year">2026 丙午马年 · 除夕夜</div>
         </div>
         
-        <div class="update-time" id="updateTime">最后更新：21:50</div>
+        <div class="update-time" id="updateTime">最后更新：21:50 · 点击条目查看详情</div>
         
         <!-- 微博热搜 -->
         <div class="card">
@@ -221,38 +318,43 @@
                 微博热搜
             </div>
             <div id="weiboList">
-                <div class="hot-item">
+                <div class="hot-item" onclick="showDetail('weibo', 1)">
                     <div class="rank rank-1">1</div>
                     <div class="hot-content">
                         <div class="hot-title">#王菲 春晚# <span class="platform-tag tag-weibo">微博</span></div>
                         <div class="hot-desc">《你我经历的一刻》未唱先火</div>
                     </div>
+                    <span class="click-hint">></span>
                 </div>
-                <div class="hot-item">
+                <div class="hot-item" onclick="showDetail('weibo', 2)">
                     <div class="rank rank-2">2</div>
                     <div class="hot-content">
                         <div class="hot-title">#郭富城王一博 闪耀动起来# <span class="platform-tag tag-weibo">微博</span></div>
                         <div class="hot-desc">两大天王合作舞台</div>
                     </div>
+                    <span class="click-hint">></span>
                 </div>
-                <div class="hot-item">
+                <div class="hot-item" onclick="showDetail('weibo', 3)">
                     <div class="rank rank-3">3</div>
                     <div class="hot-content">
                         <div class="hot-title">#春晚分会场# <span class="platform-tag tag-weibo">微博</span></div>
                         <div class="hot-desc">哈尔滨 义乌 合肥 宜宾</div>
                     </div>
+                    <span class="click-hint">></span>
                 </div>
-                <div class="hot-item">
+                <div class="hot-item" onclick="showDetail('weibo', 4)">
                     <div class="rank rank-other">4</div>
                     <div class="hot-content">
                         <div class="hot-title">#明星红包雨# <span class="platform-tag tag-weibo">微博</span></div>
                     </div>
+                    <span class="click-hint">></span>
                 </div>
-                <div class="hot-item">
+                <div class="hot-item" onclick="showDetail('weibo', 5)">
                     <div class="rank rank-other">5</div>
                     <div class="hot-content">
                         <div class="hot-title">#迪丽热巴 春晚# <span class="platform-tag tag-weibo">微博</span></div>
                     </div>
+                    <span class="click-hint">></span>
                 </div>
             </div>
         </div>
@@ -264,32 +366,29 @@
                 小红书热点
             </div>
             <div id="xhsList">
-                <div class="hot-item">
+                <div class="hot-item" onclick="showDetail('xhs', 1)">
                     <div class="rank rank-1">1</div>
                     <div class="hot-content">
                         <div class="hot-title">春晚妆容教程 <span class="platform-tag tag-xhs">小红书</span></div>
                         <div class="hot-desc">王菲同款妆容教程</div>
                     </div>
+                    <span class="click-hint">></span>
                 </div>
-                <div class="hot-item">
+                <div class="hot-item" onclick="showDetail('xhs', 2)">
                     <div class="rank rank-2">2</div>
                     <div class="hot-content">
                         <div class="hot-title">春晚穿搭盘点 <span class="platform-tag tag-xhs">小红书</span></div>
                         <div class="hot-desc">明星同款穿搭</div>
                     </div>
+                    <span class="click-hint">></span>
                 </div>
-                <div class="hot-item">
+                <div class="hot-item" onclick="showDetail('xhs', 3)">
                     <div class="rank rank-3">3</div>
                     <div class="hot-content">
                         <div class="hot-title">年夜饭菜谱 <span class="platform-tag tag-xhs">小红书</span></div>
                         <div class="hot-desc">春节家宴必备</div>
                     </div>
-                </div>
-                <div class="hot-item">
-                    <div class="rank rank-other">4</div>
-                    <div class="hot-content">
-                        <div class="hot-title">春晚伴手礼 <span class="platform-tag tag-xhs">小红书</span></div>
-                    </div>
+                    <span class="click-hint">></span>
                 </div>
             </div>
         </div>
@@ -301,32 +400,29 @@
                 知乎热榜
             </div>
             <div id="zhihuList">
-                <div class="hot-item">
+                <div class="hot-item" onclick="showDetail('zhihu', 1)">
                     <div class="rank rank-1">1</div>
                     <div class="hot-content">
                         <div class="hot-title">2026年春晚有哪些亮点？ <span class="platform-tag tag-zhihu">知乎</span></div>
                         <div class="hot-desc">1.2万回答</div>
                     </div>
+                    <span class="click-hint">></span>
                 </div>
-                <div class="hot-item">
+                <div class="hot-item" onclick="showDetail('zhihu', 2)">
                     <div class="rank rank-2">2</div>
                     <div class="hot-content">
                         <div class="hot-title">如何评价王菲春晚的新歌？ <span class="platform-tag tag-zhihu">知乎</span></div>
                         <div class="hot-desc">8000+回答</div>
                     </div>
+                    <span class="click-hint">></span>
                 </div>
-                <div class="hot-item">
+                <div class="hot-item" onclick="showDetail('zhihu', 3)">
                     <div class="rank rank-3">3</div>
                     <div class="hot-content">
                         <div class="hot-title">春晚分会场为何花落这四城？ <span class="platform-tag tag-zhihu">知乎</span></div>
                         <div class="hot-desc">地域发展分析</div>
                     </div>
-                </div>
-                <div class="hot-item">
-                    <div class="rank rank-other">4</div>
-                    <div class="hot-content">
-                        <div class="hot-title">2026春节档电影推荐 <span class="platform-tag tag-zhihu">知乎</span></div>
-                    </div>
+                    <span class="click-hint">></span>
                 </div>
             </div>
         </div>
@@ -338,32 +434,21 @@
                 百度贴吧
             </div>
             <div id="tiebaList">
-                <div class="hot-item">
+                <div class="hot-item" onclick="showDetail('tieba', 1)">
                     <div class="rank rank-1">1</div>
                     <div class="hot-content">
                         <div class="hot-title">春晚吧 <span class="platform-tag tag-tieba">贴吧</span></div>
                         <div class="hot-desc">讨论春晚精彩瞬间</div>
                     </div>
+                    <span class="click-hint">></span>
                 </div>
-                <div class="hot-item">
+                <div class="hot-item" onclick="showDetail('tieba', 2)">
                     <div class="rank rank-2">2</div>
                     <div class="hot-content">
                         <div class="hot-title">春晚明星吧 <span class="platform-tag tag-tieba">贴吧</span></div>
                         <div class="hot-desc">粉丝讨论</div>
                     </div>
-                </div>
-                <div class="hot-item">
-                    <div class="rank rank-3">3</div>
-                    <div class="hot-content">
-                        <div class="hot-title">春节吧 <span class="platform-tag tag-tieba">贴吧</span></div>
-                        <div class="hot-desc">过年那些事</div>
-                    </div>
-                </div>
-                <div class="hot-item">
-                    <div class="rank rank-other">4</div>
-                    <div class="hot-content">
-                        <div class="hot-title">电影吧 <span class="platform-tag tag-tieba">贴吧</span></div>
-                    </div>
+                    <span class="click-hint">></span>
                 </div>
             </div>
         </div>
@@ -375,32 +460,21 @@
                 海外热点
             </div>
             <div id="globalList">
-                <div class="hot-item">
+                <div class="hot-item" onclick="showDetail('global', 1)">
                     <div class="rank rank-1">1</div>
                     <div class="hot-content">
                         <div class="hot-title">#SpringFestivalGala <span class="platform-tag tag-twitter">X/Twitter</span></div>
                         <div class="hot-desc">海外华人热议</div>
                     </div>
+                    <span class="click-hint">></span>
                 </div>
-                <div class="hot-item">
+                <div class="hot-item" onclick="showDetail('global', 2)">
                     <div class="rank rank-2">2</div>
                     <div class="hot-content">
                         <div class="hot-title">Chinese New Year 2026 <span class="platform-tag tag-instagram">Instagram</span></div>
                         <div class="hot-desc">#CNY #YearOfTheHorse</div>
                     </div>
-                </div>
-                <div class="hot-item">
-                    <div class="rank rank-3">3</div>
-                    <div class="hot-content">
-                        <div class="hot-title">Spring Festival Gala 2026 <span class="platform-tag tag-youtube">YouTube</span></div>
-                        <div class="hot-desc">央视春晚海外版</div>
-                    </div>
-                </div>
-                <div class="hot-item">
-                    <div class="rank rank-other">4</div>
-                    <div class="hot-content">
-                        <div class="hot-title">#ChineseNewYear <span class="platform-tag tag-twitter">X/Twitter</span></div>
-                    </div>
+                    <span class="click-hint">></span>
                 </div>
             </div>
         </div>
@@ -411,20 +485,21 @@
                 <span class="icon">📺</span>
                 今晚看点
             </div>
-            <div class="show-item">
+            <div class="show-item" onclick="showDetail('show', 1)">
                 <div class="show-name">🎤 王菲《你我经历的一刻》</div>
+                <span class="click-hint">></span>
             </div>
-            <div class="show-item">
+            <div class="show-item" onclick="showDetail('show', 2)">
                 <div class="show-name">🏎️ 郭富城+王一博《闪耀动起来》</div>
+                <span class="click-hint">></span>
             </div>
-            <div class="show-item">
+            <div class="show-item" onclick="showDetail('show', 3)">
                 <div class="show-name">🎭 沈腾马丽 小品</div>
+                <span class="click-hint">></span>
             </div>
-            <div class="show-item">
+            <div class="show-item" onclick="showDetail('show', 4)">
                 <div class="show-name">🤖 机器人表演</div>
-            </div>
-            <div class="show-item">
-                <div class="show-name">🏝️ 四大分会场联动</div>
+                <span class="click-hint">></span>
             </div>
         </div>
         
@@ -434,21 +509,15 @@
                 <span class="icon">🎬</span>
                 春节档票房
             </div>
-            <div class="show-item">
+            <div class="show-item" onclick="showDetail('movie', 1)">
                 <div class="show-name">🥇 飞驰人生3</div>
                 <div style="color: #ff5722;">~2亿</div>
             </div>
-            <div class="show-item">
+            <div class="show-item" onclick="showDetail('movie', 2)">
                 <div class="show-name">🥈 惊蛰无声</div>
-                <div style="color: #ff5722;">-</div>
             </div>
-            <div class="show-item">
+            <div class="show-item" onclick="showDetail('movie', 3)">
                 <div class="show-name">🥉 镖人：风起大漠</div>
-                <div style="color: #ff5722;">-</div>
-            </div>
-            <div class="show-item">
-                <div class="show-name">🎬 熊出没·年年有熊</div>
-                <div style="color: #ff5722;">-</div>
             </div>
         </div>
         
@@ -457,17 +526,392 @@
         </button>
         
         <div class="footer">
-            实时更新 · 数据来源：微博/小红书/知乎/贴吧/海外社媒<br>
+            实时更新 · 点击条目查看详情 · 数据来源：多平台<br>
             🧧 祝大家马年大吉！
         </div>
     </div>
     
+    <!-- 弹窗 -->
+    <div class="modal-overlay" id="modal" onclick="closeModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <div class="modal-title" id="modalTitle">详情</div>
+                <button class="modal-close" onclick="closeModal()">×</button>
+            </div>
+            <div class="modal-body" id="modalBody">
+            </div>
+        </div>
+    </div>
+    
     <script>
+        // 详细数据
+        const detailData = {
+            weibo: {
+                1: {
+                    title: '#王菲 春晚#',
+                    tags: ['微博', '明星', '春晚'],
+                    content: `
+                        <h3>热度分析</h3>
+                        <p>王菲第六次登上春晚舞台，演唱新歌《你我经历的一刻》，这首歌来自北大毕业生组成的乐队ZaZaZsu（咂咂苏）。</p>
+                        
+                        <h3>网友评价</h3>
+                        <p>"王菲一开口，春晚弹幕都得直接炸屏"</p>
+                        <p>"六登春晚，依旧是华语乐坛天花板"</p>
+                        
+                        <h3>历史回顾</h3>
+                        <p>• 1998年：《相约九八》- 那英合作</p>
+                        <p>• 2010年：《传奇》</p>
+                        <p>• 2012年：《因为爱情》- 陈奕迅合作</p>
+                        <p>• 2018年：《岁月》- 那英合作</p>
+                        <p>• 2025年：《世界赠予我的》</p>
+                    `
+                },
+                2: {
+                    title: '#郭富城王一博 闪耀动起来#',
+                    tags: ['微博', '明星', '春晚'],
+                    content: `
+                        <h3>节目介绍</h3>
+                        <p>郭富城与王一博合作歌舞《闪耀动起来》，动感节奏+炫酷街舞，两代舞台王者合作。</p>
+                        
+                        <h3>节目亮点</h3>
+                        <p>• 郭富城：四大天王之一，舞王</p>
+                        <p>• 王一博：顶流小生，舞蹈功底扎实</p>
+                        <p>• 舞台效果：炫酷灯光+动感编排</p>
+                        
+                        <h3>播出时间</h3>
+                        <p>预计21:00左右（第一篇章后半段）</p>
+                    `
+                },
+                3: {
+                    title: '#春晚分会场#',
+                    tags: ['微博', '春晚'],
+                    content: `
+                        <h3>四大分会场</h3>
+                        <p><strong>黑龙江哈尔滨</strong> - 冰雪大世界（第三次）</p>
+                        <p><strong>浙江义乌</strong> - 全球数贸中心（浙江首个）</p>
+                        <p><strong>安徽合肥</strong> - 科技创新高地</p>
+                        <p><strong>四川宜宾</strong> - 长江第一城</p>
+                        
+                        <h3>选择原因</h3>
+                        <p>哈尔滨：冰雪文化名片</p>
+                        <p>义乌：小商品之都</p>
+                        <p>合肥：新能源汽车产业</p>
+                        <p>宜宾：动力电池之都</p>
+                    `
+                },
+                4: {
+                    title: '#明星红包雨#',
+                    tags: ['微博', '春晚', '红包'],
+                    content: `
+                        <h3>红包活动</h3>
+                        <p>150位明星除夕发红包，总额超百万元</p>
+                        
+                        <h3>热门明星</h3>
+                        <p>• 陈哲远、王鹤棣：最高49999元</p>
+                        <p>• 王楚然+丞磊：17:20同步发放</p>
+                        <p>• 共发放时间：12:00-20:00</p>
+                        
+                        <h3>参与方式</h3>
+                        <p>微博搜索"春晚大赏"进入活动页面</p>
+                    `
+                },
+                5: {
+                    title: '#迪丽热巴 春晚#',
+                    tags: ['微博', '明星', '春晚'],
+                    content: `
+                        <h3>节目信息</h3>
+                        <p>迪丽热巴在四川宜宾分会场表演开场节目《立上游》，融合川渝非遗元素。</p>
+                        
+                        <h3>舞台设计</h3>
+                        <p>• 水幕投影技术</p>
+                        <p>• 人在长江画卷中起舞</p>
+                        <p>• 非遗工艺红色长裙</p>
+                    `
+                }
+            },
+            xhs: {
+                1: {
+                    title: '春晚妆容教程',
+                    tags: ['小红书', '美妆'],
+                    content: `
+                        <h3>热门内容</h3>
+                        <p>王菲春晚同款妆容教程热度飙升</p>
+                        
+                        <h3>教程要点</h3>
+                        <p>• 底妆：清透自然</p>
+                        <p>• 眼妆：淡雅气质</p>
+                        <p>• 口红：豆沙色系</p>
+                        
+                        <h3>搜索量</h3>
+                        <p>较昨日增长 320%</p>
+                    `
+                },
+                2: {
+                    title: '春晚穿搭盘点',
+                    tags: ['小红书', '时尚'],
+                    content: `
+                        <h3>明星穿搭</h3>
+                        <p>春晚明星穿搭成为热门话题</p>
+                        
+                        <h3>热门单品</h3>
+                        <p>• 新中式外套</p>
+                        <p>• 红色元素</p>
+                        <p>• 高级定制</p>
+                    `
+                },
+                3: {
+                    title: '年夜饭菜谱',
+                    tags: ['小红书', '美食'],
+                    content: `
+                        <h3>热门菜谱</h3>
+                        <p>春节家宴必备菜谱推荐</p>
+                        
+                        <h3>热门菜品</h3>
+                        <p>• 年年有余（鱼）</p>
+                        <p>• 饺子</p>
+                        <p>• 红烧肉</p>
+                    `
+                }
+            },
+            zhihu: {
+                1: {
+                    title: '2026年春晚有哪些亮点？',
+                    tags: ['知乎', '春晚'],
+                    content: `
+                        <h3>知乎热榜</h3>
+                        <p>1.2万回答</p>
+                        
+                        <h3>主要讨论</h3>
+                        <p>• 王菲新歌《你我经历的一刻》</p>
+                        <p>• 四大分会场联动</p>
+                        <p>• 机器人表演</p>
+                        <p>• 8K+AI技术应用</p>
+                    `
+                },
+                2: {
+                    title: '如何评价王菲春晚的新歌？',
+                    tags: ['知乎', '明星'],
+                    content: `
+                        <h3>知乎热榜</h3>
+                        <p>8000+回答</p>
+                        
+                        <h3>歌曲信息</h3>
+                        <p>《你我经历的一刻》原唱：ZaZaZsu</p>
+                        <p>作词：马懿（北大中文系）</p>
+                        <p>作曲：程锦远（北大信科）</p>
+                    `
+                },
+                3: {
+                    title: '春晚分会场为何花落这四城？',
+                    tags: ['知乎', '城市'],
+                    content: `
+                        <h3>知乎分析</h3>
+                        <p>四城特色鲜明，代表不同发展方向</p>
+                        
+                        <h3>选择逻辑</h3>
+                        <p>哈尔滨：文旅名片</p>
+                        <p>义乌：外贸经济</p>
+                        <p>合肥：科技产业</p>
+                        <p>宜宾：新能源</p>
+                    `
+                }
+            },
+            tieba: {
+                1: {
+                    title: '春晚吧',
+                    tags: ['贴吧', '春晚'],
+                    content: `
+                        <h3>贴吧热度</h3>
+                        <p>春晚吧讨论热烈</p>
+                        
+                        <h3>热门话题</h3>
+                        <p>• 节目评价</p>
+                        <p>• 明星表现</p>
+                        <p>• 主持阵容</p>
+                    `
+                },
+                2: {
+                    title: '春晚明星吧',
+                    tags: ['贴吧', '明星'],
+                    content: `
+                        <h3>粉丝讨论</h3>
+                        <p>各明星粉丝团讨论中</p>
+                        
+                        <h3>热门明星</h3>
+                        <p>• 沈腾</p>
+                        <p>• 王一博</p>
+                        <p>• 王菲</p>
+                    `
+                }
+            },
+            global: {
+                1: {
+                    title: '#SpringFestivalGala',
+                    tags: ['Twitter', '海外'],
+                    content: `
+                        <h3>海外热度</h3>
+                        <p>海外华人热议春晚</p>
+                        
+                        <h3>热门话题</h3>
+                        <p>• #SpringFestivalGala</p>
+                        <p>• #ChineseNewYear</p>
+                        <p>• #YearOfTheHorse</p>
+                        
+                        <h3>海外平台</h3>
+                        <p>YouTube/TikTok/Instagram 同步直播</p>
+                    `
+                },
+                2: {
+                    title: 'Chinese New Year 2026',
+                    tags: ['Instagram', '海外'],
+                    content: `
+                        <h3>Instagram 热度</h3>
+                        <p>#CNY #ChineseNewYear</p>
+                        
+                        <h3>热门内容</h3>
+                        <p>• 年味照片</p>
+                        <p>• 春晚片段</p>
+                        <p>• 海外华人祝福</p>
+                    `
+                }
+            },
+            show: {
+                1: {
+                    title: '王菲《你我经历的一刻》',
+                    tags: ['春晚', '歌曲'],
+                    content: `
+                        <h3>演出信息</h3>
+                        <p>王菲第6次春晚</p>
+                        
+                        <h3>歌曲背景</h3>
+                        <p>来自ZaZaZsu乐队</p>
+                        <p>北大毕业生组成</p>
+                        
+                        <h3>历史评价</h3>
+                        <p>1998年《相约九八》成为经典</p>
+                        <p>2010年《传奇》大火</p>
+                    `
+                },
+                2: {
+                    title: '郭富城+王一博《闪耀动起来》',
+                    tags: ['春晚', '歌舞'],
+                    content: `
+                        <h3>节目类型</h3>
+                        <p>歌舞表演</p>
+                        
+                        <h3>明星阵容</h3>
+                        <p>郭富城（天王）+ 王一博（顶流）</p>
+                        
+                        <h3>播出时间</h3>
+                        <p>预计21:00左右</p>
+                    `
+                },
+                3: {
+                    title: '沈腾马丽 小品',
+                    tags: ['春晚', '小品'],
+                    content: `
+                        <h3>演员</h3>
+                        <p>沈腾、马丽</p>
+                        
+                        <h3>往期作品</h3>
+                        <p>《走过场》《坑》等经典</p>
+                        
+                        <h3>期待点</h3>
+                        <p>讽刺现实+搞笑</p>
+                    `
+                },
+                4: {
+                    title: '机器人表演',
+                    tags: ['春晚', '科技'],
+                    content: `
+                        <h3>技术亮点</h3>
+                        <p>具身机器人再次登台</p>
+                        
+                        <h3>技术应用</h3>
+                        <p>• AI技术</p>
+                        <p>• 8K超高清</p>
+                        <p>• 三维菁彩声</p>
+                    `
+                }
+            },
+            movie: {
+                1: {
+                    title: '飞驰人生3',
+                    tags: ['春节档', '票房'],
+                    content: `
+                        <h3>票房数据</h3>
+                        <p>春节档票房 ~2亿（截至目前）</p>
+                        
+                        <h3>基本信息</h3>
+                        <p>导演：韩寒</p>
+                        <p>主演：沈腾</p>
+                        <p>类型：喜剧/赛车</p>
+                        
+                        <h3>剧情</h3>
+                        <p>张驰转型教练</p>
+                        <p>征战"沐尘100拉力赛"</p>
+                        
+                        <h3>票房预测</h3>
+                        <p>38-42亿</p>
+                    `
+                },
+                2: {
+                    title: '惊蛰无声',
+                    tags: ['春节档', '票房'],
+                    content: `
+                        <h3>基本信息</h3>
+                        <p>导演：张艺谋</p>
+                        <p>主演：易烊千玺、朱一龙</p>
+                        <p>类型：国安/悬疑</p>
+                        
+                        <h3>剧情</h3>
+                        <p>国安小组抓间谍</p>
+                        <p>90%场景取景深圳</p>
+                        
+                        <h3>争议</h3>
+                        <p>预告片评价两极分化</p>
+                    `
+                },
+                3: {
+                    title: '镖人：风起大漠',
+                    tags: ['春节档', '票房'],
+                    content: `
+                        <h3>基本信息</h3>
+                        <p>导演：袁和平</p>
+                        <p>主演：谢霆锋、吴京</p>
+                        <p>类型：武侠/动作</p>
+                        
+                        <h3>亮点</h3>
+                        <p>实拍185天</p>
+                        <p>300+动作镜头</p>
+                        <p>真打实拍</p>
+                    `
+                }
+            }
+        };
+        
+        function showDetail(platform, id) {
+            const data = detailData[platform] && detailData[platform][id];
+            if (!data) return;
+            
+            document.getElementById('modalTitle').textContent = data.title;
+            
+            let tagsHtml = data.tags.map(tag => `<span class="modal-tag" style="background:#666;color:#fff">${tag}</span>`).join('');
+            
+            document.getElementById('modalBody').innerHTML = tagsHtml + data.content;
+            document.getElementById('modal').classList.add('active');
+        }
+        
+        function closeModal(event) {
+            if (event && event.target !== event.currentTarget) return;
+            document.getElementById('modal').classList.remove('active');
+        }
+        
         function updateTime() {
             const now = new Date();
             const hours = String(now.getHours()).padStart(2, '0');
             const minutes = String(now.getMinutes()).padStart(2, '0');
-            document.getElementById('updateTime').textContent = `最后更新：${hours}:${minutes}`;
+            document.getElementById('updateTime').textContent = `最后更新：${hours}:${minutes} · 点击条目查看详情`;
         }
         
         function refreshData() {
