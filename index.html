@@ -157,4 +157,12 @@
         if(!data)return;
         document.getElementById('modalTitle').textContent=data.title;
         let tagsHtml=data.tags.map(t=>`<span class="modal-tag" style="background:#666;color:#fff">${t}</span>`).join('');
-        if(data.readCount)tagsHtml+=`<span class="modal-tag" style
+        if(data.readCount)tagsHtml+=`<span class="modal-tag" style}
+
+    function closeModal(e){if(!e||e.target===e.currentTarget)document.getElementById('modal').classList.remove('active');}
+    function updateTime(){const n=new Date(),h=String(n.getHours()).padStart(2,'0'),m=String(n.getMinutes()).padStart(2,'0');document.getElementById('updateTime').textContent=`最后更新：${h}:${m} · 点击查看详情和热评`;}
+    function refreshData(){const b=document.querySelector('.refresh-btn');b.textContent='⏳ 加载中...';setTimeout(()=>{updateTime();b.textContent='✓ 已更新';setTimeout(()=>b.textContent='🔄 刷新数据',1500);},1000);}
+    updateTime();
+    </script>
+</body>
+</html>
