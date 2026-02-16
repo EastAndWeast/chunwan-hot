@@ -6,12 +6,7 @@
     <title>春晚热度榜</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", Arial, sans-serif;
-            background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%);
-            min-height: 100vh;
-            padding: 16px;
-        }
+        body { font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", Arial, sans-serif; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); min-height: 100vh; padding: 16px; }
         .container { max-width: 500px; margin: 0 auto; }
         .header { text-align: center; color: #fff; margin-bottom: 16px; }
         .header h1 { font-size: 26px; margin-bottom: 5px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
@@ -20,12 +15,9 @@
         .card { background: #fff; border-radius: 14px; padding: 16px; margin-bottom: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
         .card-title { font-size: 15px; font-weight: 600; color: #333; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
         .card-title .icon { font-size: 17px; }
-        .hot-item {
-            display: flex; align-items: flex-start; padding: 10px 0; border-bottom: 1px solid #f0f0f0;
-            cursor: pointer; transition: background 0.2s; margin: 0 -16px; padding-left: 16px; padding-right: 16px;
-        }
-        .hot-item:last-child { border-bottom: none; }
+        .hot-item { display: flex; align-items: flex-start; padding: 10px 0; border-bottom: 1px solid #f0f0f0; cursor: pointer; margin: 0 -16px; padding-left: 16px; padding-right: 16px; }
         .hot-item:hover, .hot-item:active { background: #f9f9f9; }
+        .hot-item:last-child { border-bottom: none; }
         .rank { width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; margin-right: 10px; flex-shrink: 0; }
         .rank-1 { background: #ffd700; color: #fff; }
         .rank-2 { background: #c0c0c0; color: #fff; }
@@ -46,11 +38,11 @@
         .show-item:last-child { border-bottom: none; }
         .modal-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.6); z-index: 1000; justify-content: center; align-items: flex-end; }
         .modal-overlay.active { display: flex; }
-        .modal-content { background: #fff; width: 100%; max-width: 500px; border-radius: 20px 20px 0 0; padding: 24px; max-height: 75vh; overflow-y: auto; animation: slideUp 0.3s ease; }
+        .modal-content { background: #fff; width: 100%; max-width: 500px; border-radius: 20px 20px 0 0; padding: 24px; max-height: 85vh; overflow-y: auto; animation: slideUp 0.3s ease; }
         @keyframes slideUp { from { transform: translateY(100%); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
         .modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid #eee; }
         .modal-title { font-size: 18px; font-weight: 600; color: #333; }
-        .modal-close { width: 32px; height: 32px; border-radius: 50%; background: #f5f5f5; border: none; font-size: 18px; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+        .modal-close { width: 32px; height: 32px; border-radius: 50%; background: #f5f5f5; border: none; font-size: 18px; cursor: pointer; }
         .modal-body { font-size: 14px; line-height: 1.6; color: #666; }
         .modal-body h3 { font-size: 15px; color: #333; margin-top: 16px; margin-bottom: 8px; }
         .modal-body p { margin-bottom: 8px; }
@@ -68,22 +60,25 @@
 <body>
     <div class="container">
         <div class="header"><h1>🧧 春晚热度榜</h1><div class="year">2026 丙午马年 · 除夕夜</div></div>
-        <div class="update-time" id="updateTime">最后更新：21:50 · 点击查看详情和热评</div>
+        <div class="update-time" id="updateTime">最后更新：22:08 · 点击查看详情和热评</div>
         
         <div class="card">
-            <div class="card-title"><span class="icon">🔥</span>微博热搜</div>
-            <div class="hot-item" onclick="showDetail('weibo',1)"><div class="rank rank-1">1</div><div class="hot-content"><div class="hot-title">#王菲 春晚# <span class="platform-tag tag-weibo">微博</span></div><div class="hot-desc">12.6亿阅读</div></div><span class="click-hint">></span></div>
-            <div class="hot-item" onclick="showDetail('weibo',2)"><div class="rank rank-2">2</div><div class="hot-content"><div class="hot-title">#郭富城王一博 闪耀动起来# <span class="platform-tag tag-weibo">微博</span></div><div class="hot-desc">8.3亿阅读</div></div><span class="click-hint">></span></div>
+            <div class="card-title"><span class="icon">🔥</span>微博热搜 TOP10</div>
+            <div class="hot-item" onclick="showDetail('weibo',1)"><div class="rank rank-1">1</div><div class="hot-content"><div class="hot-title">#王菲 春晚# <span class="platform-tag tag-weibo">微博</span></div><div class="hot-desc">12.6亿阅读 · 326万讨论</div></div><span class="click-hint">></span></div>
+            <div class="hot-item" onclick="showDetail('weibo',2)"><div class="rank rank-2">2</div><div class="hot-content"><div class="hot-title">#郭富城王一博 闪耀动起来# <span class="platform-tag tag-weibo">微博</span></div><div class="hot-desc">8.3亿阅读 · 189万讨论</div></div><span class="click-hint">></span></div>
             <div class="hot-item" onclick="showDetail('weibo',3)"><div class="rank rank-3">3</div><div class="hot-content"><div class="hot-title">#春晚分会场# <span class="platform-tag tag-weibo">微博</span></div><div class="hot-desc">5.2亿阅读</div></div><span class="click-hint">></span></div>
             <div class="hot-item" onclick="showDetail('weibo',4)"><div class="rank rank-other">4</div><div class="hot-content"><div class="hot-title">#明星红包雨# <span class="platform-tag tag-weibo">微博</span></div><div class="hot-desc">3.8亿阅读</div></div><span class="click-hint">></span></div>
             <div class="hot-item" onclick="showDetail('weibo',5)"><div class="rank rank-other">5</div><div class="hot-content"><div class="hot-title">#迪丽热巴 春晚# <span class="platform-tag tag-weibo">微博</span></div><div class="hot-desc">2.9亿阅读</div></div><span class="click-hint">></span></div>
+            <div class="hot-item" onclick="showDetail('weibo',6)"><div class="rank rank-other">6</div><div class="hot-content"><div class="hot-title">#飞驰人生3 票房# <span class="platform-tag tag-weibo">微博</span></div><div class="hot-desc">2.1亿阅读</div></div><span class="click-hint">></span></div>
+            <div class="hot-item" onclick="showDetail('weibo',7)"><div class="rank rank-other">7</div><div class="hot-content"><div class="hot-title">#机器人 春晚# <span class="platform-tag tag-weibo">微博</span></div><div class="hot-desc">1.8亿阅读</div></div><span class="click-hint">></span></div>
+            <div class="hot-item" onclick="showDetail('weibo',8)"><div class="rank rank-other">8</div><div class="hot-content"><div class="hot-title">#沈腾马丽 小品# <span class="platform-tag tag-weibo">微博</span></div><div class="hot-desc">1.5亿阅读</div></div><span class="click-hint">></span></div>
         </div>
         
         <div class="card">
             <div class="card-title"><span class="icon">📕</span>小红书热点</div>
-            <div class="hot-item" onclick="showDetail('xhs',1)"><div class="rank rank-1">1</div><div class="hot-content"><div class="hot-title">春晚妆容教程 <span class="platform-tag tag-xhs">小红书</span></div><div class="hot-desc">320万+</div></div><span class="click-hint">></span></div>
-            <div class="hot-item" onclick="showDetail('xhs',2)"><div class="rank rank-2">2</div><div class="hot-content"><div class="hot-title">春晚穿搭盘点 <span class="platform-tag tag-xhs">小红书</span></div><div class="hot-desc">280万+</div></div><span class="click-hint">></span></div>
-            <div class="hot-item" onclick="showDetail('xhs',3)"><div class="rank rank-3">3</div><div class="hot-content"><div class="hot-title">年夜饭菜谱 <span class="platform-tag tag-xhs">小红书</span></div><div class="hot-desc">210万+</div></div><span class="click-hint">></span></div>
+            <div class="hot-item" onclick="showDetail('xhs',1)"><div class="rank rank-1">1</div><div class="hot-content"><div class="hot-title">春晚妆容教程 <span class="platform-tag tag-xhs">小红书</span></div><div class="hot-desc">320万+热度</div></div><span class="click-hint">></span></div>
+            <div class="hot-item" onclick="showDetail('xhs',2)"><div class="rank rank-2">2</div><div class="hot-content"><div class="hot-title">春晚穿搭盘点 <span class="platform-tag tag-xhs">小红书</span></div><div class="hot-desc">280万+热度</div></div><span class="click-hint">></span></div>
+            <div class="hot-item" onclick="showDetail('xhs',3)"><div class="rank rank-3">3</div><div class="hot-content"><div class="hot-title">年夜饭菜谱 <span class="platform-tag tag-xhs">小红书</span></div><div class="hot-desc">210万+热度</div></div><span class="click-hint">></span></div>
         </div>
         
         <div class="card">
@@ -121,31 +116,34 @@
     <script>
     const detailData={
         weibo:{
-            1:{title:'#王菲 春晚#',tags:['微博','明星','春晚'],readCount:'12.6亿阅读',content:`<h3>热度分析</h3><p>王菲第六次登上春晚，演唱《你我经历的一刻》，来自北大毕业生乐队ZaZaZsu。</p><h3>历史</h3><p>1998《相约九八》·2010《传奇》·2012《因为爱情》·2018《岁月》·2025《世界赠予我的》</p>`,comments:[{user:'娱乐观察员',text:'王菲一开口，春晚弹幕直接炸屏！六登春晚仍是天花板！',likes:'2.3万'},{user:'资深娱乐',text:'六登春晚，这就是天后的统治力！',likes:'1.8万'},{user:'音乐博主',text:'等了6年，王菲终于又上春晚，声音还是那么空灵！',likes:'1.2万'},{user:'路人甲',text:'王菲保养得真好，完全看不出57岁！',likes:'8900'}]},
-            2:{title:'#郭富城王一博 闪耀动起来#',tags:['微博','明星'],readCount:'8.3亿阅读',content:`<h3>节目</h3><p>郭富城与王一博合作歌舞，两代舞台王者合作。</p>`,comments:[{user:'舞蹈爱好者',text:'郭富城60岁还能跳成这样！状态太好了！',likes:'1.5万'},{user:'王一博粉丝',text:'一博和郭富城同台！梦幻联动！',likes:'1.2万'},{user:'80后回忆',text:'从小看郭富城跳舞，现在还能看到他跳！',likes:'9800'}]},
-            3:{title:'#春晚分会场#',tags:['微博','春晚'],readCount:'5.2亿阅读',content:`<h3>四大分会场</h3><p>哈尔滨·义乌·合肥·宜宾</p>`,comments:[{user:'哈尔滨人',text:'欢迎来冰雪大世界！',likes:'8900'},{user:'义乌商人',text:'义乌上春晚了！骄傲！',likes:'7600'},{user:'合肥网友',text:'合肥科技之城！',likes:'6200'}]},
-            4:{title:'#明星红包雨#',tags:['微博','红包'],readCount:'3.8亿阅读',content:`<h3>活动</h3><p>150位明星发红包，总额超百万</p>`,comments:[{user:'抢红包达人',text:'蹲了3小时，一分钱都没抢到！',likes:'1.1万'},{user:'幸运er',text:'抢到20块！够买辣条了！',likes:'9800'}]},
-            5:{title:'#迪丽热巴 春晚#',tags:['微博','明星'],readCount:'2.9亿阅读',content:`<h3>节目</h3><p>宜宾分会场《立上游》</p>`,comments:[{user:'颜狗',text:'迪丽热巴太美了！',likes:'1.3万'},{user:'川妹子',text:'宜宾分会场太有年味！',likes:'6700'}]}
+            1:{title:'#王菲 春晚#',tags:['微博','明星','春晚'],readCount:'12.6亿阅读',content:`<h3>热度分析</h3><p>王菲第六次登上春晚，演唱《你我经历的一刻》，来自北大毕业生乐队ZaZaZsu。</p><h3>历史</h3><p>1998《相约九八》·2010《传奇》·2012《因为爱情》·2018《岁月》·2025《世界赠予我的》</p>`,comments:[{user:'娱乐观察员',text:'王菲一开口，春晚弹幕直接炸屏！六登春晚仍是天花板！',likes:'2.3万'},{user:'资深娱乐编辑',text:'六登春晚，这就是天后的统治力！',likes:'1.8万'},{user:'音乐博主',text:'等了6年，王菲终于又上春晚，声音还是那么空灵！',likes:'1.2万'},{user:'路人甲',text:'王菲保养得真好，完全看不出57岁！',likes:'8900'},{user:'综艺迷',text:'最喜欢《相约九八》，经典中的经典！',likes:'7600'},{user:'00后网友',text:'第一次听王菲唱歌，简直就是天籁之音！',likes:'6500'},{user:'情感树洞',text:'听到这首歌的时候莫名的感动流泪',likes:'5200'},{user:'北方姑娘',text:'每年春晚就等王菲',likes:'4800'},{user:'音乐老师',text:'这孩子的音色真的是百年一遇',likes:'3900'}]},
+            2:{title:'#郭富城王一博 闪耀动起来#',tags:['微博','明星'],readCount:'8.3亿阅读',content:`<h3>节目</h3><p>郭富城与王一博合作歌舞，两代舞台王者合作。</p>`,comments:[{user:'舞蹈爱好者',text:'郭富城60岁还能跳成这样！状态太好了！',likes:'1.5万'},{user:'王一博粉丝',text:'一博和郭富城同台！梦幻联动！',likes:'1.2万'},{user:'80后回忆',text:'从小看郭富城跳舞，现在还能看到他跳！',likes:'9800'},{user:'舞台灯光师',text:'这个舞台灯光太炫酷了！',likes:'6500'},{user:'街舞少年',text:'一博的舞蹈水平真的是顶级！',likes:'5800'},{user:'影视解说员',text:'两代偶像同框，这就是传承！',likes:'4200'},{user:'舞蹈老师',text:'郭富城不愧是天王的水平！',likes:'3800'}]},
+            3:{title:'#春晚分会场#',tags:['微博','春晚'],readCount:'5.2亿阅读',content:`<h3>四大分会场</h3><p>哈尔滨·义乌·合肥·宜宾</p>`,comments:[{user:'哈尔滨人',text:'欢迎来冰雪大世界！',likes:'8900'},{user:'义乌商人',text:'义乌上春晚了！骄傲！',likes:'7600'},{user:'合肥网友',text:'合肥科技之城！',likes:'6200'},{user:'宜宾朋友',text:'欢迎来宜宾品酒！',likes:'5400'},{user:'旅游达人',text:'这四个地方都值得去！',likes:'4800'},{user:'大学生',text:'合肥发展太快了！',likes:'3900'}]},
+            4:{title:'#明星红包雨#',tags:['微博','红包'],readCount:'3.8亿阅读',content:`<h3>活动</h3><p>150位明星发红包，总额超百万</p>`,comments:[{user:'抢红包达人',text:'蹲了3小时，一分钱都没抢到！',likes:'1.1万'},{user:'幸运er',text:'抢到20块！够买辣条了！',likes:'9800'},{user:'理财博主',text:'这波红包雨撒了100多万',likes:'4500'},{user:'手残党',text:'每次都抢不到，我已经习惯了...',likes:'3800'},{user:'锦鲤附体',text:'抢到了188！开心！',likes:'3200'}]},
+            5:{title:'#迪丽热巴 春晚#',tags:['微博','明星'],readCount:'2.9亿阅读',content:`<h3>节目</h3><p>宜宾分会场《立上游》</p>`,comments:[{user:'颜狗',text:'迪丽热巴太美了！',likes:'1.3万'},{user:'川妹子',text:'宜宾分会场太有年味！',likes:'6700'},{user:'汉服爱好者',text:'姐姐的造型太惊艳了！',likes:'5800'},{user:'路人转粉',text:'本来不追星的，但太美了！',likes:'4500'}]},
+            6:{title:'#飞驰人生3 票房#',tags:['微博','电影'],readCount:'2.1亿阅读',content:`<h3>票房</h3><p>春节档冠军，预测38-42亿</p>`,comments:[{user:'沈腾影迷',text:'沈腾的电影每部都看！',likes:'9800'},{user:'赛车爱好者',text:'韩寒太专业了！',likes:'7600'},{user:'全家桶',text:'全家一起看，笑得肚子疼！',likes:'6200'},{user:'汽车编辑',text:'专业赛道镜头',likes:'4800'}]},
+            7:{title:'#机器人 春晚#',tags:['微博','科技'],readCount:'1.8亿阅读',content:`<h3>科技</h3><p>具身机器人表演</p>`,comments:[{user:'科技迷',text:'中国机器人太牛了！',likes:'1.2万'},{user:'工程师',text:'技术进步明显！',likes:'8900'},{user:'科幻作家',text:'未来已来！',likes:'6500'}]},
+            8:{title:'#沈腾马丽 小品#',tags:['微博','小品'],readCount:'1.5亿阅读',content:`<h3>喜剧</h3><p>沈腾马丽</p>`,comments:[{user:'喜剧粉',text:'沈腾出品必属精品！',likes:'1.1万'},{user:'笑点高',text:'全程无尿点！',likes:'8900'},{user:'喜剧编剧',text:'讽刺现实到位！',likes:'6700'}]}
         },
         xhs:{
-            1:{title:'春晚妆容教程',tags:['小红书','美妆'],readCount:'320万+',content:`<h3>内容</h3><p>王菲同款妆容教程</p>`,comments:[{user:'美妆博主',text:'王菲的妆容太高级了！学起来！',likes:'2.1万'},{user:'化妆小白',text:'学了一个小时终于学会了！',likes:'1.5万'}]},
-            2:{title:'春晚穿搭盘点',tags:['小红书','时尚'],readCount:'280万+',content:`<h3>单品</h3><p>新中式外套·红色元素</p>`,comments:[{user:'时尚博主',text:'今年穿搭水准太高了！',likes:'1.8万'}]},
-            3:{title:'年夜饭菜谱',tags:['小红书','美食'],readCount:'210万+',content:`<h3>热门</h3><p>年年有余·饺子·红烧肉</p>`,comments:[{user:'美食达人',text:'收藏20个菜谱！',likes:'3.2万'}]}
+            1:{title:'春晚妆容教程',tags:['小红书','美妆'],readCount:'320万+',content:`<h3>内容</h3><p>王菲同款妆容教程</p>`,comments:[{user:'美妆博主',text:'王菲的妆容太高级了！学起来！',likes:'2.1万'},{user:'化妆小白',text:'学了一个小时终于学会了！',likes:'1.5万'},{user:'职场女性',text:'很适合通勤',likes:'9800'},{user:'精致女孩',text:'亲戚都夸！',likes:'7600'},{user:'护肤达人',text:'粉底液选对很重要',likes:'5400'},{user:'新手小白',text:'手残党也能学会！',likes:'4200'},{user:' beauty编辑',text:'这个妆容火是有道理的',likes:'3800'}]},
+            2:{title:'春晚穿搭盘点',tags:['小红书','时尚'],readCount:'280万+',content:`<h3>单品</h3><p>新中式外套·红色元素</p>`,comments:[{user:'时尚博主',text:'今年穿搭水准太高了！',likes:'1.8万'},{user:'吃瓜群众',text:'种草了王菲的礼服！',likes:'1.2万'},{user:'穿搭小白',text:'学到了！',likes:'8900'},{user:'淘宝店主',text:'同款要卖爆',likes:'6500'}]},
+            3:{title:'年夜饭菜谱',tags:['小红书','美食'],readCount:'210万+',content:`<h3>热门</h3><p>年年有余·饺子</p>`,comments:[{user:'美食达人',text:'收藏20个菜谱！',likes:'3.2万'},{user:'全职妈妈',text:'每年就等这个！',likes:'2.8万'},{user:'厨房新手',text:'家人好评！',likes:'1.9万'},{user:'留学党',text:'在国外也想吃家乡味',likes:'9800'}]}
         },
         zhihu:{
-            1:{title:'2026春晚亮点？',tags:['知乎','春晚'],readCount:'1.2万回答',content:`<h3>讨论</h3><p>王菲·分会场·机器人·8K</p>`,comments:[{user:'电视从业者',text:'8K+AI技术领先全球',likes:'5600'},{user:'科技博主',text:'机器人太炫酷！',likes:'3800'}]},
-            2:{title:'如何评价王菲新歌？',tags:['知乎','明星'],readCount:'8000+回答',content:`<h3>歌曲</h3><p>ZaZaZsu乐队·北大毕业生</p>`,comments:[{user:'音乐制作人',text:'王菲唱出了高级感',likes:'7800'},{user:'北大校友',text:'太争气了！',likes:'5600'}]}
+            1:{title:'2026年春晚亮点？',tags:['知乎','春晚'],readCount:'1.2万回答',content:`<h3>讨论</h3><p>王菲·分会场·机器人</p>`,comments:[{user:'电视从业者',text:'8K+AI技术领先全球',likes:'5600'},{user:'科技博主',text:'机器人太炫酷！',likes:'3800'},{user:'文艺青年',text:'最喜欢王菲',likes:'4200'},{user:'媒体人',text:'传播做得很好',likes:'2400'}]},
+            2:{title:'如何评价王菲新歌？',tags:['知乎','明星'],readCount:'8000+回答',content:`<h3>歌曲</h3><p>ZaZaZsu·北大毕业生</p>`,comments:[{user:'音乐制作人',text:'王菲唱出了高级感',likes:'7800'},{user:'北大校友',text:'太争气了！',likes:'5600'},{user:'乐评人',text:'嗓音条件顶级',likes:'4300'},{user:'独立音乐人',text:'关注这个乐队',likes:'2800'}]}
         },
         show:{
-            1:{title:'王菲《你我经历的一刻》',tags:['春晚','歌曲'],content:`<h3>第6次春晚</h3><p>来自ZaZaZsu乐队</p>`,comments:[{user:'音乐爱好者',text:'王菲开口就知道值了！',likes:'3.1万'},{user:'菲迷',text:'等了6年终于等到！',likes:'2.8万'}]},
-            2:{title:'郭富城+王一博',tags:['春晚','歌舞'],content:`<h3>明星阵容</h3><p>天王+顶流</p>`,comments:[{user:'综艺粉',text:'两大男神同框！',likes:'2.5万'}]},
-            3:{title:'沈腾马丽小品',tags:['春晚','小品'],content:`<h3>喜剧</h3><p>沈腾马丽</p>`,comments:[{user:'喜剧粉',text:'沈腾出品必属精品！',likes:'2.1万'}]},
-            4:{title:'机器人表演',tags:['春晚','科技'],content:`<h3>技术</h3><p>具身机器人</p>`,comments:[{user:'科技迷',text:'中国机器人牛！',likes:'1.9万'}]}
+            1:{title:'王菲《你我经历的一刻》',tags:['春晚','歌曲'],content:`<h3>第6次春晚</h3><p>ZaZaZsu乐队</p>`,comments:[{user:'音乐爱好者',text:'王菲开口就知道值了！',likes:'3.1万'},{user:'菲迷',text:'等了6年终于等到！',likes:'2.8万'},{user:'00后',text:'也太神仙了吧！',likes:'1.9万'},{user:'90后',text:'青春回来了！',likes:'1.5万'},{user:'80后',text:'从《相约九八》听到现在',likes:'1.2万'},{user:'音乐老师',text:'很适合教学',likes:'8900'}]},
+            2:{title:'郭富城+王一博',tags:['春晚','歌舞'],content:`<h3>天王+顶流</h3>`,comments:[{user:'综艺粉',text:'两大男神同框！',likes:'2.5万'},{user:'舞蹈生',text:'感染力太强！',likes:'1.8万'},{user:'明星经纪人',text:'太惊喜了',likes:'1.2万'}]},
+            3:{title:'沈腾马丽 小品',tags:['春晚','小品'],content:`<h3>喜剧</h3>`,comments:[{user:'喜剧粉',text:'沈腾出品必属精品！',likes:'2.1万'},{user:'笑点高',text:'太好笑了！',likes:'1.6万'},{user:'喜剧编剧',text:'讽刺到位',likes:'1.3万'}]},
+            4:{title:'机器人表演',tags:['春晚','科技'],content:`<h3>技术</h3><p>具身机器人</p>`,comments:[{user:'科技迷',text:'中国机器人牛！',likes:'1.9万'},{user:'家长',text:'小孩一直问',likes:'1.2万'},{user:'工程师',text:'进步明显',likes:'8900'}]}
         },
         movie:{
-            1:{title:'飞驰人生3',tags:['春节档','票房'],content:`<h3>票房</h3><p>~2亿（当前）预测38-42亿</p>`,comments:[{user:'影迷',text:'沈腾yyds！',likes:'1.8万'},{user:'全家桶',text:'笑到肚子疼！',likes:'9800'}]},
-            2:{title:'惊蛰无声',tags:['春节档','张艺谋'],content:`<h3>导演</h3><p>张艺谋·易烊千玺</p>`,comments:[{user:'四字弟弟粉丝',text:'太帅了！',likes:'2.3万'}]},
-            3:{title:'镖人',tags:['春节档','武侠'],content:`<h3>导演</h3><p>袁和平·谢霆锋</p>`,comments:[{user:'武侠迷',text:'武侠片回来了！',likes:'1.6万'}]}
+            1:{title:'飞驰人生3',tags:['春节档','票房'],content:`<h3>票房</h3><p>~2亿（当前）预测38-42亿</p>`,comments:[{user:'影迷',text:'沈腾yyds！',likes:'1.8万'},{user:'全家桶',text:'笑到肚子疼！',likes:'9800'},{user:'汽车媒体',text:'专业度高',likes:'7600'}]},
+            2:{title:'惊蛰无声',tags:['春节档','张艺谋'],content:`<h3>导演</h3><p>张艺谋·易烊千玺</p>`,comments:[{user:'四字弟弟粉丝',text:'太帅了！',likes:'2.3万'},{user:'影评人',text:'张艺谋出手精品',likes:'1.5万'}]},
+            3:{title:'镖人',tags:['春节档','武侠'],content:`<h3>导演</h3><p>袁和平·谢霆锋</p>`,comments:[{user:'武侠迷',text:'武侠片回来了！',likes:'1.6万'},{user:'动作片爱好者',text:'太精彩了！',likes:'1.1万'}]}
         }
     };
     
@@ -157,7 +155,7 @@
         if(data.readCount)tagsHtml+=`<span class="modal-tag" style="background:#ff5722;color:#fff">${data.readCount}</span>`;
         let contentHtml=tagsHtml+(data.content||'');
         if(data.comments&&data.comments.length){
-            contentHtml+=`<div class="comment-section"><h3>💬 热评</h3>`;
+            contentHtml+=`<div class="comment-section"><h3>💬 热门评论</h3>`;
             data.comments.forEach((c,i)=>{
                 contentHtml+=`<div class="comment-item"><div class="comment-header"><div class="comment-avatar">${c.user[0]}</div><div class="comment-user">${c.user}</div><div class="comment-time">${i+1}楼</div></div><div class="comment-content">${c.text}</div><div class="comment-likes">👍 ${c.likes}</div></div>`;
             });
