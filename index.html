@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>春晚热度榜</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+            background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+        
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 5px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header .year {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        
+        .update-time {
+            text-align: center;
+            color: #ffcdd2;
+            font-size: 12px;
+            margin-bottom: 15px;
+        }
+        
+        .card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+        
+        .card-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .card-title .icon {
+            font-size: 18px;
+        }
+        
+        .hot-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .hot-item:last-child {
+            border-bottom: none;
+        }
+        
+        .rank {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 600;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+        
+        .rank-1 { background: #ffd700; color: #fff; }
+        .rank-2 { background: #c0c0c0; color: #fff; }
+        .rank-3 { background: #cd7f32; color: #fff; }
+        .rank-other { background: #f5f5f5; color: #999; }
+        
+        .hot-content {
+            flex: 1;
+            min-width: 0;
+        }
+        
+        .hot-title {
+            font-size: 15px;
+            color: #333;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .hot-tag {
+            font-size: 11px;
+            color: #ff5722;
+            margin-left: 8px;
+        }
+        
+        .hot-desc {
+            font-size: 12px;
+            color: #999;
+            margin-top: 4px;
+        }
+        
+        .refresh-btn {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            background: #ffcdd2;
+            color: #c62828;
+            border: none;
+            border-radius: 12px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            text-align: center;
+            margin-top: 10px;
+        }
+        
+        .refresh-btn:active {
+            background: #ef9a9a;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #999;
+        }
+        
+        .footer {
+            text-align: center;
+            color: #ffcdd2;
+            font-size: 12px;
+            margin-top: 20px;
+            padding-bottom: 20px;
+        }
+        
+        /* 春晚节目单样式 */
+        .show-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 14px;
+        }
+        
+        .show-item:last-child {
+            border-bottom: none;
+        }
+        
+        .show-name {
+            color: #333;
+        }
+        
+        .show-actors {
+            color: #666;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🧧 春晚热度榜</h1>
+            <div class="year">2026 丙午马年</div>
+        </div>
+        
+        <div class="update-time" id="updateTime">最后更新：20:50</div>
+        
+        <div class="card">
+            <div class="card-title">
+                <span class="icon">🔥</span>
+                微博热搜
+            </div>
+            <div id="weiboList">
+                <div class="hot-item">
+                    <div class="rank rank-1">1</div>
+                    <div class="hot-content">
+                        <div class="hot-title">#王菲春晚#</div>
+                        <div class="hot-desc">王菲《你我经历的一刻》未唱先火</div>
+                    </div>
+                </div>
+                <div class="hot-item">
+                    <div class="rank rank-2">2</div>
+                    <div class="hot-content">
+                        <div class="hot-title">#郭富城王一博 闪耀动起来#</div>
+                        <div class="hot-desc">两大天王合作舞台</div>
+                    </div>
+                </div>
+                <div class="hot-item">
+                    <div class="rank rank-3">3</div>
+                    <div class="hot-content">
+                        <div class="hot-title">#春晚分会场#</div>
+                        <div class="hot-desc">哈尔滨 义乌 合肥 宜宾</div>
+                    </div>
+                </div>
+                <div class="hot-item">
+                    <div class="rank rank-other">4</div>
+                    <div class="hot-content">
+                        <div class="hot-title">#明星红包#</div>
+                    </div>
+                </div>
+                <div class="hot-item">
+                    <div class="rank rank-other">5</div>
+                    <div class="hot-content">
+                        <div class="hot-title">#迪丽热巴 春晚#</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-title">
+                <span class="icon">📺</span>
+                今晚看点
+            </div>
+            <div class="show-item">
+                <div>
+                    <div class="show-name">🎤 王菲《你我经历的一刻》</div>
+                </div>
+            </div>
+            <div class="show-item">
+                <div>
+                    <div class="show-name">🏎️ 郭富城+王一博《闪耀动起来》</div>
+                </div>
+            </div>
+            <div class="show-item">
+                <div>
+                    <div class="show-name">🎭 沈腾马丽 小品</div>
+                </div>
+            </div>
+            <div class="show-item">
+                <div>
+                    <div class="show-name">🤖 机器人表演</div>
+                </div>
+            </div>
+            <div class="show-item">
+                <div>
+                    <div class="show-name">🏝️ 四大分会场联动</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-title">
+                <span class="icon">🎬</span>
+                春节档票房
+            </div>
+            <div class="show-item">
+                <div class="show-name">🥇 飞驰人生3</div>
+                <div style="color: #ff5722;">~2亿</div>
+            </div>
+            <div class="show-item">
+                <div class="show-name">🥈 惊蛰无声</div>
+                <div style="color: #ff5722;">-</div>
+            </div>
+            <div class="show-item">
+                <div class="show-name">🥉 镖人：风起大漠</div>
+                <div style="color: #ff5722;">-</div>
+            </div>
+        </div>
+        
+        <button class="refresh-btn" onclick="refreshData()">
+            🔄 刷新数据
+        </button>
+        
+        <div class="footer">
+            实时更新春晚热点<br>
+            数据来源：微博/央视
+        </div>
+    </div>
+    
+    <script>
+        function updateTime() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            document.getElementById('updateTime').textContent = `最后更新：${hours}:${minutes}`;
+        }
+        
+        function refreshData() {
+            const btn = document.querySelector('.refresh-btn');
+            btn.textContent = '⏳ 加载中...';
+            
+            // 模拟刷新
+            setTimeout(() => {
+                updateTime();
+                btn.textContent = '✓ 数据已更新';
+                setTimeout(() => {
+                    btn.textContent = '🔄 刷新数据';
+                }, 1500);
+            }, 1000);
+        }
+        
+        // 页面加载时更新时间
+        updateTime();
+    </script>
+</body>
+</html>
