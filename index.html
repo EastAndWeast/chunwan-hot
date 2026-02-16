@@ -15,7 +15,7 @@
             font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", Arial, sans-serif;
             background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%);
             min-height: 100vh;
-            padding: 20px;
+            padding: 16px;
         }
         
         .container {
@@ -26,17 +26,17 @@
         .header {
             text-align: center;
             color: #fff;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
         }
         
         .header h1 {
-            font-size: 28px;
+            font-size: 26px;
             margin-bottom: 5px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
         
         .header .year {
-            font-size: 16px;
+            font-size: 15px;
             opacity: 0.9;
         }
         
@@ -44,35 +44,35 @@
             text-align: center;
             color: #ffcdd2;
             font-size: 12px;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
         
         .card {
             background: #fff;
-            border-radius: 16px;
-            padding: 20px;
-            margin-bottom: 15px;
+            border-radius: 14px;
+            padding: 16px;
+            margin-bottom: 12px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.15);
         }
         
         .card-title {
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 600;
             color: #333;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             display: flex;
             align-items: center;
             gap: 8px;
         }
         
         .card-title .icon {
-            font-size: 18px;
+            font-size: 17px;
         }
         
         .hot-item {
             display: flex;
-            align-items: center;
-            padding: 12px 0;
+            align-items: flex-start;
+            padding: 10px 0;
             border-bottom: 1px solid #f0f0f0;
         }
         
@@ -81,15 +81,15 @@
         }
         
         .rank {
-            width: 28px;
-            height: 28px;
+            width: 24px;
+            height: 24px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 14px;
+            font-size: 12px;
             font-weight: 600;
-            margin-right: 12px;
+            margin-right: 10px;
             flex-shrink: 0;
         }
         
@@ -104,66 +104,74 @@
         }
         
         .hot-title {
-            font-size: 15px;
+            font-size: 14px;
             color: #333;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
+            line-height: 1.4;
         }
         
         .hot-tag {
-            font-size: 11px;
+            font-size: 10px;
             color: #ff5722;
-            margin-left: 8px;
+            margin-left: 6px;
         }
         
         .hot-desc {
-            font-size: 12px;
+            font-size: 11px;
             color: #999;
-            margin-top: 4px;
+            margin-top: 3px;
         }
+        
+        .platform-tag {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 10px;
+            margin-right: 6px;
+            flex-shrink: 0;
+        }
+        
+        .tag-weibo { background: #ff8200; color: #fff; }
+        .tag-xhs { background: #fe2c55; color: #fff; }
+        .tag-zhihu { background: #0084ff; color: #fff; }
+        .tag-tieba { background: #369; color: #fff; }
+        .tag-twitter { background: #000; color: #fff; }
+        .tag-youtube { background: #ff0000; color: #fff; }
+        .tag-instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: #fff; }
         
         .refresh-btn {
             display: block;
             width: 100%;
-            padding: 14px;
+            padding: 12px;
             background: #ffcdd2;
             color: #c62828;
             border: none;
-            border-radius: 12px;
-            font-size: 15px;
+            border-radius: 10px;
+            font-size: 14px;
             font-weight: 600;
             cursor: pointer;
             text-align: center;
-            margin-top: 10px;
+            margin-top: 8px;
         }
         
         .refresh-btn:active {
             background: #ef9a9a;
         }
         
-        .loading {
-            text-align: center;
-            padding: 40px;
-            color: #999;
-        }
-        
         .footer {
             text-align: center;
             color: #ffcdd2;
-            font-size: 12px;
-            margin-top: 20px;
-            padding-bottom: 20px;
+            font-size: 11px;
+            margin-top: 16px;
+            padding-bottom: 16px;
         }
         
-        /* 春晚节目单样式 */
         .show-item {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 0;
+            padding: 8px 0;
             border-bottom: 1px solid #f0f0f0;
-            font-size: 14px;
+            font-size: 13px;
         }
         
         .show-item:last-child {
@@ -174,9 +182,26 @@
             color: #333;
         }
         
-        .show-actors {
-            color: #666;
+        .section-tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+        
+        .tab {
+            padding: 6px 12px;
+            border-radius: 16px;
             font-size: 12px;
+            background: #f5f5f5;
+            color: #666;
+            cursor: pointer;
+            border: none;
+        }
+        
+        .tab.active {
+            background: #d32f2f;
+            color: #fff;
         }
     </style>
 </head>
@@ -184,11 +209,12 @@
     <div class="container">
         <div class="header">
             <h1>🧧 春晚热度榜</h1>
-            <div class="year">2026 丙午马年</div>
+            <div class="year">2026 丙午马年 · 除夕夜</div>
         </div>
         
-        <div class="update-time" id="updateTime">最后更新：20:50</div>
+        <div class="update-time" id="updateTime">最后更新：21:50</div>
         
+        <!-- 微博热搜 -->
         <div class="card">
             <div class="card-title">
                 <span class="icon">🔥</span>
@@ -198,71 +224,211 @@
                 <div class="hot-item">
                     <div class="rank rank-1">1</div>
                     <div class="hot-content">
-                        <div class="hot-title">#王菲春晚#</div>
-                        <div class="hot-desc">王菲《你我经历的一刻》未唱先火</div>
+                        <div class="hot-title">#王菲 春晚# <span class="platform-tag tag-weibo">微博</span></div>
+                        <div class="hot-desc">《你我经历的一刻》未唱先火</div>
                     </div>
                 </div>
                 <div class="hot-item">
                     <div class="rank rank-2">2</div>
                     <div class="hot-content">
-                        <div class="hot-title">#郭富城王一博 闪耀动起来#</div>
+                        <div class="hot-title">#郭富城王一博 闪耀动起来# <span class="platform-tag tag-weibo">微博</span></div>
                         <div class="hot-desc">两大天王合作舞台</div>
                     </div>
                 </div>
                 <div class="hot-item">
                     <div class="rank rank-3">3</div>
                     <div class="hot-content">
-                        <div class="hot-title">#春晚分会场#</div>
+                        <div class="hot-title">#春晚分会场# <span class="platform-tag tag-weibo">微博</span></div>
                         <div class="hot-desc">哈尔滨 义乌 合肥 宜宾</div>
                     </div>
                 </div>
                 <div class="hot-item">
                     <div class="rank rank-other">4</div>
                     <div class="hot-content">
-                        <div class="hot-title">#明星红包#</div>
+                        <div class="hot-title">#明星红包雨# <span class="platform-tag tag-weibo">微博</span></div>
                     </div>
                 </div>
                 <div class="hot-item">
                     <div class="rank rank-other">5</div>
                     <div class="hot-content">
-                        <div class="hot-title">#迪丽热巴 春晚#</div>
+                        <div class="hot-title">#迪丽热巴 春晚# <span class="platform-tag tag-weibo">微博</span></div>
                     </div>
                 </div>
             </div>
         </div>
         
+        <!-- 小红书 -->
+        <div class="card">
+            <div class="card-title">
+                <span class="icon">📕</span>
+                小红书热点
+            </div>
+            <div id="xhsList">
+                <div class="hot-item">
+                    <div class="rank rank-1">1</div>
+                    <div class="hot-content">
+                        <div class="hot-title">春晚妆容教程 <span class="platform-tag tag-xhs">小红书</span></div>
+                        <div class="hot-desc">王菲同款妆容教程</div>
+                    </div>
+                </div>
+                <div class="hot-item">
+                    <div class="rank rank-2">2</div>
+                    <div class="hot-content">
+                        <div class="hot-title">春晚穿搭盘点 <span class="platform-tag tag-xhs">小红书</span></div>
+                        <div class="hot-desc">明星同款穿搭</div>
+                    </div>
+                </div>
+                <div class="hot-item">
+                    <div class="rank rank-3">3</div>
+                    <div class="hot-content">
+                        <div class="hot-title">年夜饭菜谱 <span class="platform-tag tag-xhs">小红书</span></div>
+                        <div class="hot-desc">春节家宴必备</div>
+                    </div>
+                </div>
+                <div class="hot-item">
+                    <div class="rank rank-other">4</div>
+                    <div class="hot-content">
+                        <div class="hot-title">春晚伴手礼 <span class="platform-tag tag-xhs">小红书</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 知乎 -->
+        <div class="card">
+            <div class="card-title">
+                <span class="icon">💬</span>
+                知乎热榜
+            </div>
+            <div id="zhihuList">
+                <div class="hot-item">
+                    <div class="rank rank-1">1</div>
+                    <div class="hot-content">
+                        <div class="hot-title">2026年春晚有哪些亮点？ <span class="platform-tag tag-zhihu">知乎</span></div>
+                        <div class="hot-desc">1.2万回答</div>
+                    </div>
+                </div>
+                <div class="hot-item">
+                    <div class="rank rank-2">2</div>
+                    <div class="hot-content">
+                        <div class="hot-title">如何评价王菲春晚的新歌？ <span class="platform-tag tag-zhihu">知乎</span></div>
+                        <div class="hot-desc">8000+回答</div>
+                    </div>
+                </div>
+                <div class="hot-item">
+                    <div class="rank rank-3">3</div>
+                    <div class="hot-content">
+                        <div class="hot-title">春晚分会场为何花落这四城？ <span class="platform-tag tag-zhihu">知乎</span></div>
+                        <div class="hot-desc">地域发展分析</div>
+                    </div>
+                </div>
+                <div class="hot-item">
+                    <div class="rank rank-other">4</div>
+                    <div class="hot-content">
+                        <div class="hot-title">2026春节档电影推荐 <span class="platform-tag tag-zhihu">知乎</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 贴吧 -->
+        <div class="card">
+            <div class="card-title">
+                <span class="icon">🏠</span>
+                百度贴吧
+            </div>
+            <div id="tiebaList">
+                <div class="hot-item">
+                    <div class="rank rank-1">1</div>
+                    <div class="hot-content">
+                        <div class="hot-title">春晚吧 <span class="platform-tag tag-tieba">贴吧</span></div>
+                        <div class="hot-desc">讨论春晚精彩瞬间</div>
+                    </div>
+                </div>
+                <div class="hot-item">
+                    <div class="rank rank-2">2</div>
+                    <div class="hot-content">
+                        <div class="hot-title">春晚明星吧 <span class="platform-tag tag-tieba">贴吧</span></div>
+                        <div class="hot-desc">粉丝讨论</div>
+                    </div>
+                </div>
+                <div class="hot-item">
+                    <div class="rank rank-3">3</div>
+                    <div class="hot-content">
+                        <div class="hot-title">春节吧 <span class="platform-tag tag-tieba">贴吧</span></div>
+                        <div class="hot-desc">过年那些事</div>
+                    </div>
+                </div>
+                <div class="hot-item">
+                    <div class="rank rank-other">4</div>
+                    <div class="hot-content">
+                        <div class="hot-title">电影吧 <span class="platform-tag tag-tieba">贴吧</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 国外社媒 -->
+        <div class="card">
+            <div class="card-title">
+                <span class="icon">🌏</span>
+                海外热点
+            </div>
+            <div id="globalList">
+                <div class="hot-item">
+                    <div class="rank rank-1">1</div>
+                    <div class="hot-content">
+                        <div class="hot-title">#SpringFestivalGala <span class="platform-tag tag-twitter">X/Twitter</span></div>
+                        <div class="hot-desc">海外华人热议</div>
+                    </div>
+                </div>
+                <div class="hot-item">
+                    <div class="rank rank-2">2</div>
+                    <div class="hot-content">
+                        <div class="hot-title">Chinese New Year 2026 <span class="platform-tag tag-instagram">Instagram</span></div>
+                        <div class="hot-desc">#CNY #YearOfTheHorse</div>
+                    </div>
+                </div>
+                <div class="hot-item">
+                    <div class="rank rank-3">3</div>
+                    <div class="hot-content">
+                        <div class="hot-title">Spring Festival Gala 2026 <span class="platform-tag tag-youtube">YouTube</span></div>
+                        <div class="hot-desc">央视春晚海外版</div>
+                    </div>
+                </div>
+                <div class="hot-item">
+                    <div class="rank rank-other">4</div>
+                    <div class="hot-content">
+                        <div class="hot-title">#ChineseNewYear <span class="platform-tag tag-twitter">X/Twitter</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 今晚看点 -->
         <div class="card">
             <div class="card-title">
                 <span class="icon">📺</span>
                 今晚看点
             </div>
             <div class="show-item">
-                <div>
-                    <div class="show-name">🎤 王菲《你我经历的一刻》</div>
-                </div>
+                <div class="show-name">🎤 王菲《你我经历的一刻》</div>
             </div>
             <div class="show-item">
-                <div>
-                    <div class="show-name">🏎️ 郭富城+王一博《闪耀动起来》</div>
-                </div>
+                <div class="show-name">🏎️ 郭富城+王一博《闪耀动起来》</div>
             </div>
             <div class="show-item">
-                <div>
-                    <div class="show-name">🎭 沈腾马丽 小品</div>
-                </div>
+                <div class="show-name">🎭 沈腾马丽 小品</div>
             </div>
             <div class="show-item">
-                <div>
-                    <div class="show-name">🤖 机器人表演</div>
-                </div>
+                <div class="show-name">🤖 机器人表演</div>
             </div>
             <div class="show-item">
-                <div>
-                    <div class="show-name">🏝️ 四大分会场联动</div>
-                </div>
+                <div class="show-name">🏝️ 四大分会场联动</div>
             </div>
         </div>
         
+        <!-- 春节档票房 -->
         <div class="card">
             <div class="card-title">
                 <span class="icon">🎬</span>
@@ -280,6 +446,10 @@
                 <div class="show-name">🥉 镖人：风起大漠</div>
                 <div style="color: #ff5722;">-</div>
             </div>
+            <div class="show-item">
+                <div class="show-name">🎬 熊出没·年年有熊</div>
+                <div style="color: #ff5722;">-</div>
+            </div>
         </div>
         
         <button class="refresh-btn" onclick="refreshData()">
@@ -287,8 +457,8 @@
         </button>
         
         <div class="footer">
-            实时更新春晚热点<br>
-            数据来源：微博/央视
+            实时更新 · 数据来源：微博/小红书/知乎/贴吧/海外社媒<br>
+            🧧 祝大家马年大吉！
         </div>
     </div>
     
@@ -304,7 +474,6 @@
             const btn = document.querySelector('.refresh-btn');
             btn.textContent = '⏳ 加载中...';
             
-            // 模拟刷新
             setTimeout(() => {
                 updateTime();
                 btn.textContent = '✓ 数据已更新';
@@ -314,7 +483,6 @@
             }, 1000);
         }
         
-        // 页面加载时更新时间
         updateTime();
     </script>
 </body>
