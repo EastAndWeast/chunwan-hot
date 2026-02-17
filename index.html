@@ -106,6 +106,16 @@
             <div class="show-item" onclick="showDetail('movie',3)"><div class="show-name">🥉 镖人</div></div>
         </div>
         
+        <div class="card">
+            <div class="card-title"><span class="icon">🗺️</span>正月初一风俗</div>
+            <div class="hot-item" onclick="showDetail('custom',1)"><div class="rank rank-1">北方</div><div class="hot-content"><div class="hot-title">🧧 北方 · 吃饺子</div><div class="hot-desc">形如元宝，寓意招财进宝</div></div><span class="click-hint">></span></div>
+            <div class="hot-item" onclick="showDetail('custom',2)"><div class="rank rank-2">南方</div><div class="hot-content"><div class="hot-title">🍜 南方 · 年糕/汤圆</div><div class="hot-desc">年糕寓意年年高 · 汤圆代表团圆</div></div><span class="click-hint">></span></div>
+            <div class="hot-item" onclick="showDetail('custom',3)"><div class="rank rank-3">东北</div><div class="hot-content"><div class="hot-title">🎆 东北 · 踩高跷/扭秧歌</div><div class="hot-desc">热烈喜庆的集体活动</div></div><span class="click-hint">></span></div>
+            <div class="hot-item" onclick="showDetail('custom',4)"><div class="rank rank-other">广东</div><div class="hot-content"><div class="hot-title">🧧 广东 · 拜年/逗利是</div><div class="hot-desc">红包习俗，金额讲究"意头"</div></div><span class="click-hint">></span></div>
+            <div class="hot-item" onclick="showDetail('custom',5)"><div class="rank rank-other">四川</div><div class="hot-content"><div class="hot-title">🔥 四川 · 放鞭炮/熏腊肉</div><div class="hot-desc">传统年味与美食</div></div><span class="click-hint">></span></div>
+            <div class="hot-item" onclick="showDetail('custom',6)"><div class="rank rank-other">福建</div><div class="hot-content"><div class="hot-title">🙏 福建 · 祭祖/游神</div><div class="hot-desc">热闹的宗族传统</div></div><span class="click-hint">></span></div>
+        </div>
+        
         <button class="refresh-btn" onclick="refreshData()">🔄 刷新数据</button>
         <div class="footer">点击条目查看详情和热评 · 🧧 马年大吉！</div>
     </div>
@@ -149,6 +159,14 @@
             1:{title:'飞驰人生3',tags:['春节档','票房'],content:'<h3>票房</h3><p>~2亿 预测38-42亿</p>',comments:[{user:'影迷',text:'沈腾yyds！',likes:'1.8万'},{user:'全家桶',text:'笑到肚子疼！',likes:'9800'}]},
             2:{title:'惊蛰无声',tags:['春节档','张艺谋'],content:'<h3>导演</h3><p>张艺谋·易烊千玺</p>',comments:[{user:'四字弟弟粉丝',text:'太帅了！',likes:'2.3万'},{user:'影评人',text:'张艺谋出手精品',likes:'1.5万'}]},
             3:{title:'镖人',tags:['春节档','武侠'],content:'<h3>导演</h3><p>袁和平·谢霆锋</p>',comments:[{user:'武侠迷',text:'武侠片回来了！',likes:'1.6万'},{user:'动作片爱好者',text:'太精彩了！',likes:'1.1万'}]}
+        },
+        custom:{
+            1:{title:'🧧 北方·吃饺子',tags:['北方','春节','民俗'],content:'<h3>📍 地域</h3><p>北京、天津、河北、东北、山东等北方地区</p><h3>🗺️ 地图</h3><div style="background:#f5f5f5;padding:15px;border-radius:8px;text-align:center;margin:10px 0;"><p style="color:#666;">🗺️ 中国北方地区</p><p style="font-size:12px;color:#999;">东北、华北、山东等地</p></div><h3>🧧 风俗介绍</h3><p>北方人过年必吃饺子，形如元宝，寓意"招财进宝"。包饺子时会在其中1-2个饺子中放入硬币，吃到的人寓意新年好运。</p><h3>🍽️ 特色</h3><p>除夕夜全家一起包饺子，初一早上煮饺子，配以腊八蒜等小菜。</p>',comments:[{user:'北方人',text:'从小到大过年必吃饺子！',likes:'3.2万'},{user:'东北小可爱',text:'我家还会在饺子里放糖！',likes:'1.8万'},{user:'北京土著',text:'饺子和腊八蒜是绝配！',likes:'9800'}]},
+            2:{title:'🍜 南方·年糕汤圆',tags:['南方','春节','民俗'],content:'<h3>📍 地域</h3><p>上海、江苏、浙江、广东、福建等南方地区</p><h3>🗺️ 地图</h3><div style="background:#f5f5f5;padding:15px;border-radius:8px;text-align:center;margin:10px 0;"><p style="color:#666;">🗺️ 中国南方地区</p><p style="font-size:12px;color:#999;">华东、华南地区</p></div><h3>🧧 风俗介绍</h3><p>南方过年吃年糕和汤圆。年糕寓意"年年高升"，汤圆代表团圆美满。</p><h3>🍽️ 特色</h3><p>上海年糕甜糯可口；广东汤圆有咸甜之分；福建闽南地区吃"甜粿"。</p>',comments:[{user:'上海宁',text:'排骨年糕是真的好吃！',likes:'2.5万'},{user:'广东人',text:'汤圆要吃咸的！',likes:'1.9万'},{user:'浙江小囡',text:'外婆做的年糕最香！',likes:'1.2万'}]},
+            3:{title:'🎆 东北·秧歌高跷',tags:['东北','春节','民俗'],content:'<h3>📍 地域</h3><p>辽宁、吉林、黑龙江</p><h3>🗺️ 地图</h3><div style="background:#f5f5f5;padding:15px;border-radius:8px;text-align:center;margin:10px 0;"><p style="color:#666;">🗺️ 东北地区</p><p style="font-size:12px;color:#999;">辽宁、吉林、黑龙江</p></div><h3>🧧 风俗介绍</h3><p>东北过年非常热闹，踩高跷、扭秧歌是传统项目。全村人一起参与，敲锣打鼓，载歌载舞。</p><h3>🎭 特色</h3><p>从除夕一直持续到正月十五，街头巷尾都能看到秧歌队伍。</p>',comments:[{user:'东北银',text:'过年不扭秧歌那叫过年？',likes:'4.1万'},{user:'南方小伙伴',text:'东北过年太热闹了！',likes:'2.3万'},{user:'在外游子',text:'想家里的秧歌了！',likes:'1.5万'}]},
+            4:{title:'🧧 广东·拜年逗利是',tags:['广东','春节','民俗'],content:'<h3>📍 地域</h3><p>广东省</p><h3>🗺️ 地图</h3><div style="background:#f5f5f5;padding:15px;border-radius:8px;text-align:center;margin:10px 0;"><p style="color:#666;">🗺️ 广东省</p><p style="font-size:12px;color:#999;">珠三角、粤东、粤西</p></div><h3>🧧 风俗介绍</h3><p>广东过年最重要是"逗利是"（要红包）。已婚人士要给未婚者发红包，红包金额不大但讲究"意头"，通常5元、10元、20元。</p><h3>🍽️ 特色</h3><p>年夜饭必有白切鸡、蒸鱼；年初一吃斋菜；年初二开年吃腊味。</p>',comments:[{user:'广东靓仔',text:'利是利是，大吉大利！',likes:'3.8万'},{user:'打工人',text:'今年收了几千块利是！',likes:'2.1万'},{user:'新广州人',text:'习俗太有意思了！',likes:'1.3万'}]},
+            5:{title:'🔥 四川·放鞭炮熏腊肉',tags:['四川','春节','民俗'],content:'<h3>📍 地域</h3><p>四川、重庆</p><h3>🗺️ 地图</h3><div style="background:#f5f5f5;padding:15px;border-radius:8px;text-align:center;margin:10px 0;"><p style="color:#666;">🗺️ 川蜀地区</p><p style="font-size:12px;color:#999;">四川、重庆</p></div><h3>🧧 风俗介绍</h3><p>四川过年放鞭炮是重头戏，从除夕夜一直放到天亮。此外熏制腊肉、香肠是年前必备。</p><h3>🍖 特色</h3><p>腊肉、香肠、酱肉是年夜饭主角；初一吃汤圆或面条；火锅是必备。</p>',comments:[{user:'四川娃子',text:'放鞭炮才是年味！',likes:'2.9万'},{user:'吃货一枚',text:'想念老家的腊肉了！',likes:'2.1万'},{user:'火锅爱好者',text:'过年必须吃火锅！',likes:'1.8万'}]},
+            6:{title:'🙏 福建·祭祖游神',tags:['福建','春节','民俗'],content:'<h3>📍 地域</h3><p>福建（闽南地区）</p><h3>🗺️ 地图</h3><div style="background:#f5f5f5;padding:15px;border-radius:8px;text-align:center;margin:10px 0;"><p style="color:#666;">🗺️ 闽南地区</p><p style="font-size:12px;color:#999;">厦门、泉州、漳州</p></div><h3>🧧 风俗介绍</h3><p>福建闽南地区宗族观念强，过年非常重要的活动是祭祖和"游神"。抬着神明塑像游街，祈求平安。</p><h3>🏮 特色</h3><p>除夕夜祭祖；年初一走亲访友；年初五迎财神；元霄节游灯。</p>',comments:[{user:'闽南儿女',text:'游神是童年最深的记忆！',likes:'3.5万'},{user:'海外华人',text:'家乡的习俗永远难忘！',likes:'2.2万'},{user:'文化传承者',text:'这些传统必须传承下去！',likes:'1.6万'}]}
         }
     };
     
