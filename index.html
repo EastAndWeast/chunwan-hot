@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>春晚热度榜</title>
+    <title>正月初一 · 春节风俗</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", Arial, sans-serif; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); min-height: 100vh; padding: 16px; }
@@ -60,8 +60,18 @@
 </head>
 <body>
     <div class="container">
-        <div class="header"><h1>🧧 春晚热度榜</h1><div class="year">2026 丙午马年 · 除夕</div></div>
-        <div class="update-time" id="updateTime">最后更新：22:56 · 点击查看详情和热评</div>
+        <div class="header"><h1>🧧 正月初一 · 春节风俗</h1><div class="year">2026 丙午马年 · 农历新年初一</div></div>
+        <div class="update-time" id="updateTime">最后更新：00:17 · 点击查看详情和热评</div>
+        
+        <div class="card">
+            <div class="card-title"><span class="icon">🗺️</span>正月初一风俗</div>
+            <div class="hot-item" onclick="showDetail('custom',1)"><div class="rank rank-1">北方</div><div class="hot-content"><div class="hot-title">🧧 北方 · 吃饺子</div><div class="hot-desc">形如元宝，寓意招财进宝</div></div><span class="click-hint">></span></div>
+            <div class="hot-item" onclick="showDetail('custom',2)"><div class="rank rank-2">南方</div><div class="hot-content"><div class="hot-title">🍜 南方 · 年糕/汤圆</div><div class="hot-desc">年糕寓意年年高 · 汤圆代表团圆</div></div><span class="click-hint">></span></div>
+            <div class="hot-item" onclick="showDetail('custom',3)"><div class="rank rank-3">东北</div><div class="hot-content"><div class="hot-title">🎆 东北 · 踩高跷/扭秧歌</div><div class="hot-desc">热烈喜庆的集体活动</div></div><span class="click-hint">></span></div>
+            <div class="hot-item" onclick="showDetail('custom',4)"><div class="rank rank-other">广东</div><div class="hot-content"><div class="hot-title">🧧 广东 · 拜年/逗利是</div><div class="hot-desc">红包习俗，金额讲究"意头"</div></div><span class="click-hint">></span></div>
+            <div class="hot-item" onclick="showDetail('custom',5)"><div class="rank rank-other">四川</div><div class="hot-content"><div class="hot-title">🔥 四川 · 放鞭炮/熏腊肉</div><div class="hot-desc">传统年味与美食</div></div><span class="click-hint">></span></div>
+            <div class="hot-item" onclick="showDetail('custom',6)"><div class="rank rank-other">福建</div><div class="hot-content"><div class="hot-title">🙏 福建 · 祭祖/游神</div><div class="hot-desc">热闹的宗族传统</div></div><span class="click-hint">></span></div>
+        </div>
         
         <div class="card">
             <div class="card-title"><span class="icon">🔥</span>微博热搜</div>
@@ -104,16 +114,6 @@
             <div class="show-item" onclick="showDetail('movie',1)"><div class="show-name">🥇 飞驰人生3</div><div style="color:#ff5722">~2亿</div></div>
             <div class="show-item" onclick="showDetail('movie',2)"><div class="show-name">🥈 惊蛰无声</div></div>
             <div class="show-item" onclick="showDetail('movie',3)"><div class="show-name">🥉 镖人</div></div>
-        </div>
-        
-        <div class="card">
-            <div class="card-title"><span class="icon">🗺️</span>正月初一风俗</div>
-            <div class="hot-item" onclick="showDetail('custom',1)"><div class="rank rank-1">北方</div><div class="hot-content"><div class="hot-title">🧧 北方 · 吃饺子</div><div class="hot-desc">形如元宝，寓意招财进宝</div></div><span class="click-hint">></span></div>
-            <div class="hot-item" onclick="showDetail('custom',2)"><div class="rank rank-2">南方</div><div class="hot-content"><div class="hot-title">🍜 南方 · 年糕/汤圆</div><div class="hot-desc">年糕寓意年年高 · 汤圆代表团圆</div></div><span class="click-hint">></span></div>
-            <div class="hot-item" onclick="showDetail('custom',3)"><div class="rank rank-3">东北</div><div class="hot-content"><div class="hot-title">🎆 东北 · 踩高跷/扭秧歌</div><div class="hot-desc">热烈喜庆的集体活动</div></div><span class="click-hint">></span></div>
-            <div class="hot-item" onclick="showDetail('custom',4)"><div class="rank rank-other">广东</div><div class="hot-content"><div class="hot-title">🧧 广东 · 拜年/逗利是</div><div class="hot-desc">红包习俗，金额讲究"意头"</div></div><span class="click-hint">></span></div>
-            <div class="hot-item" onclick="showDetail('custom',5)"><div class="rank rank-other">四川</div><div class="hot-content"><div class="hot-title">🔥 四川 · 放鞭炮/熏腊肉</div><div class="hot-desc">传统年味与美食</div></div><span class="click-hint">></span></div>
-            <div class="hot-item" onclick="showDetail('custom',6)"><div class="rank rank-other">福建</div><div class="hot-content"><div class="hot-title">🙏 福建 · 祭祖/游神</div><div class="hot-desc">热闹的宗族传统</div></div><span class="click-hint">></span></div>
         </div>
         
         <button class="refresh-btn" onclick="refreshData()">🔄 刷新数据</button>
