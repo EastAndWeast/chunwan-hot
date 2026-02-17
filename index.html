@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>正月初一 · 春节风俗</title>
+    <title>正月初二 · 春节风俗</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", Arial, sans-serif; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); min-height: 100vh; padding: 16px; }
@@ -60,8 +60,18 @@
 </head>
 <body>
     <div class="container">
-        <div class="header"><h1>🧧 正月初一 · 春节风俗</h1><div class="year">2026 丙午马年 · 农历新年初一</div></div>
-        <div class="update-time" id="updateTime">最后更新：00:17 · 点击查看详情和热评</div>
+        <div class="header"><h1>🧧 正月初二 · 春节风俗</h1><div class="year">2026 丙午马年 · 农历新年初二</div>
+        <div class="update-time" id="updateTime">最后更新：20:24 · 点击查看详情和热评</div>
+        
+        <div class="card">
+            <div class="card-title"><span class="icon">🗺️</span>正月初二风俗</div>
+            <div class="hot-item" onclick="showDetail('chuer',1)"><div class="rank rank-1">女儿</div><div class="hot-content"><div class="hot-title">👩‍👩‍👧 回娘家</div><div class="hot-desc">出嫁女儿携礼回娘家拜年</div></div><span class="click-hint">></span></div>
+            <div class="hot-item" onclick="showDetail('chuer',2)"><div class="rank rank-2">祭祖</div><div class="hot-content"><div class="hot-title">🙏 祭祖/上坟</div><div class="hot-desc">带供品祭拜祖先</div></div><span class="click-hint">></span></div>
+            <div class="hot-item" onclick="showDetail('chuer',3)"><div class="rank rank-3">开年</div><div class="hot-content"><div class="hot-title">🍖 粤桂：开年饭</div><div class="hot-desc">祭祀后全家聚餐</div></div><span class="click-hint">></span></div>
+            <div class="hot-item" onclick="showDetail('chuer',4)"><div class="rank rank-other">忌</div><div class="hot-content"><div class="hot-title">⚠️ 忌讳</div><div class="hot-desc">不动剪刀、不扫地、不借钱</div></div><span class="click-hint">></span></div>
+            <div class="hot-item" onclick="showDetail('chuer',5)"><div class="rank rank-other">北方</div><div class="hot-content"><div class="hot-title">🥟 北方：吃面条</div><div class="hot-desc">寓意条条顺，长长久久</div></div><span class="click-hint">></span></div>
+            <div class="hot-item" onclick="showDetail('chuer',6)"><div class="rank rank-other">财神</div><div class="hot-content"><div class="hot-title">🧧 迎财神</div><div class="hot-desc">商家/家庭摆供品迎财神</div></div><span class="click-hint">></span></div>
+        </div>
         
         <div class="card">
             <div class="card-title"><span class="icon">🗺️</span>正月初一风俗</div>
@@ -159,6 +169,14 @@
             1:{title:'飞驰人生3',tags:['春节档','票房'],content:'<h3>票房</h3><p>~2亿 预测38-42亿</p>',comments:[{user:'影迷',text:'沈腾yyds！',likes:'1.8万'},{user:'全家桶',text:'笑到肚子疼！',likes:'9800'}]},
             2:{title:'惊蛰无声',tags:['春节档','张艺谋'],content:'<h3>导演</h3><p>张艺谋·易烊千玺</p>',comments:[{user:'四字弟弟粉丝',text:'太帅了！',likes:'2.3万'},{user:'影评人',text:'张艺谋出手精品',likes:'1.5万'}]},
             3:{title:'镖人',tags:['春节档','武侠'],content:'<h3>导演</h3><p>袁和平·谢霆锋</p>',comments:[{user:'武侠迷',text:'武侠片回来了！',likes:'1.6万'},{user:'动作片爱好者',text:'太精彩了！',likes:'1.1万'}]}
+        },
+        chuer:{
+            1:{title:'👩‍👩‍👧 回娘家',tags:['初二','回门','民俗'],content:'<h3>📍 地域</h3><p>全国大部分地区</p><h3>🗺️ 地图</h3><div style="background:#f5f5f5;padding:15px;border-radius:8px;text-align:center;margin:10px 0;"><p style="color:#666;">🗺️ 全国</p><p style="font-size:12px;color:#999;">出嫁女儿统一回娘家</p></div><h3>🧧 风俗介绍</h3><p>正月初二是"回门日"，出嫁的女儿会带着丈夫和孩子一起回娘家拜年。女儿要带"回门礼"，通常是烟酒、糖果、糕点等。</p><h3>🎁 礼物</h3><p>双数礼物为佳，讲究成双成对。如：两条烟、两瓶酒、糕点等。</p>',comments:[{user:'出嫁女',text:'每年初二最期待回娘家！',likes:'3.2万'},{user:'娘家人',text:'女儿回来全家团圆！',likes:'2.1万'},{user:'外孙控',text:'带孩子回娘家最开心！',likes:'1.5万'}]},
+            2:{title:'🙏 祭祖上坟',tags:['初二','祭祖','上坟'],content:'<h3>📍 地域</h3><p>北方地区为主</p><h3>🗺️ 地图</h3><div style="background:#f5f5f5;padding:15px;border-radius:8px;text-align:center;margin:10px 0;"><p style="color:#666;">🗺️ 北方地区</p><p style="font-size:12px;color:#999;">河北、山东、河南等地</p></div><h3>🧧 风俗介绍</h3><p>北方一些地区在正月初二要"上坟"祭祖，带着供品到祖先墓地拜祭，寓意新年伊始不忘祖先。</p><h3>🎁 供品</h3><p>通常带水果、糕点、酒、香烛等。</p>',comments:[{user:'北方人',text:'每年初二去给爷爷上坟',likes:'2.8万'},{user:'传统派',text:'不忘祖先才能走得更远',likes:'1.9万'},{user:'孝子贤孙',text:'这是我们的传统',likes:'1.2万'}]},
+            3:{title:'🍖 粤桂：开年饭',tags:['初二','开年','广东','广西'],content:'<h3>📍 地域</h3><p>广东、广西部分地区</p><h3>🗺️ 地图</h3><div style="background:#f5f5f5;padding:15px;border-radius:8px;text-align:center;margin:10px 0;"><p style="color:#666;">🗺️ 粤桂地区</p><p style="font-size:12px;color:#999;">广东、广西</p></div><h3>🧧 风俗介绍</h3><p>广东和广西部分地区在正月初二吃"开年饭"，祭祀祖先后全家聚餐，寓意新年开张大吉。</p><h3>🍽️ 菜品</h3><p>白切鸡、烧肉、虾、鱼等丰盛菜肴。</p>',comments:[{user:'广东人',text:'开年饭是每年最丰盛的一顿！',likes:'2.5万'},{user:'广西老表',text:'初二开年，恭喜发财！',likes:'1.8万'},{user:'吃货一枚',text:'最爱家里的开年饭！',likes:'1.3万'}]},
+            4:{title:'⚠️ 忌讳',tags:['初二','禁忌','民俗'],content:'<h3>📍 地域</h3><p>全国通用</p><h3>🗺️ 地图</h3><div style="background:#f5f5f5;padding:15px;border-radius:8px;text-align:center;margin:10px 0;"><p style="color:#666;">🗺️ 全国</p><p style="font-size:12px;color:#999;">传统禁忌</p></div><h3>🧧 风俗介绍</h3><p>正月初二有一些传统忌讳：</p><h3>⚫ 禁忌事项</h3><p>• 不动剪刀 - 避免"剪断"财路<br>• 不扫地 - 防止扫走财运<br>• 不借钱 - 避免财运外流<br>• 不午睡 - 避免懒惰</p>',comments:[{user:'传统老人',text:'这些规矩还是要注意的',likes:'2.1万'},{user:'新派90后',text:'有些禁忌不太信了',likes:'1.6万'},{user:'中立派',text:'宁可信其有吧',likes:'9800'}]},
+            5:{title:'🥟 北方：吃面条',tags:['初二','面条','北方'],content:'<h3>📍 地域</h3><p>北方地区</p><h3>🗺️ 地图</h3><div style="background:#f5f5f5;padding:15px;border-radius:8px;text-align:center;margin:10px 0;"><p style="color:#666;">🗺️ 北方地区</p><p style="font-size:12px;color:#999;">北京、天津、河北</p></div><h3>🧧 风俗介绍</h3><p>北方一些地区在正月初二吃面条，寓意"条条顺"，希望新的一年顺顺利利，面条越长越好。</p><h3>🍜 吃法</h3><p>炸酱面、打卤面、汤面等多种做法。</p>',comments:[{user:'北方人',text:'初二必须吃碗面！',likes:'1.9万'},{user:'面条控',text:'长长的面条寓意好！',likes:'1.2万'},{user:'妈妈味道',text:'还是家里的面最好吃',likes:'8500'}]},
+            6:{title:'🧧 迎财神',tags:['初二','财神','商家'],content:'<h3>📍 地域</h3><p>全国（商家为主）</p><h3>🗺️ 地图</h3><div style="background:#f5f5f5;padding:15px;border-radius:8px;text-align:center;margin:10px 0;"><p style="color:#666;">🗺️ 全国商家</p><p style="font-size:12px;color:#999;">商铺、企业</p></div><h3>🧧 风俗介绍</h3><p>正月初二是传统的"迎财神日"，尤其是商家会摆上丰盛的供品，迎接财神爷，祈求新年生意兴隆、财源广进。</p><h3>🎊 仪式</h3><p>放鞭炮、摆供品、贴财神像，祈求新年发大财。</p>',comments:[{user:'小老板',text:'初二迎财神，生意兴隆！',likes:'2.3万'},{user:'打工人',text:'希望财神爷也关照一下我！',likes:'1.8万'},{user:'商家后代',text:'家里年年都迎财神',likes:'1.1万'}]}
         },
         custom:{
             1:{title:'🧧 北方·吃饺子',tags:['北方','春节','民俗'],content:'<h3>📍 地域</h3><p>北京、天津、河北、东北、山东等北方地区</p><h3>🗺️ 地图</h3><div style="background:#f5f5f5;padding:15px;border-radius:8px;text-align:center;margin:10px 0;"><p style="color:#666;">🗺️ 中国北方地区</p><p style="font-size:12px;color:#999;">东北、华北、山东等地</p></div><h3>🧧 风俗介绍</h3><p>北方人过年必吃饺子，形如元宝，寓意"招财进宝"。包饺子时会在其中1-2个饺子中放入硬币，吃到的人寓意新年好运。</p><h3>🍽️ 特色</h3><p>除夕夜全家一起包饺子，初一早上煮饺子，配以腊八蒜等小菜。</p>',comments:[{user:'北方人',text:'从小到大过年必吃饺子！',likes:'3.2万'},{user:'东北小可爱',text:'我家还会在饺子里放糖！',likes:'1.8万'},{user:'北京土著',text:'饺子和腊八蒜是绝配！',likes:'9800'}]},
