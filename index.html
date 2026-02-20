@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>正月初四 · 春节风俗</title>
+    <title>正月初五 · 春节风俗</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", Arial, sans-serif; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); min-height: 100vh; padding: 16px; }
@@ -60,19 +60,34 @@
 </head>
 <body>
     <div class="container">
-        <div class="header"><h1>🧧 正月初四 · 春节风俗</h1><div class="year">2026 丙午马年 · 农历新年初四</div>
-        <div class="update-time" id="updateTime">最后更新：07:30 · 点击查看详情和热评</div>
+        <div class="header"><h1>🧧 正月初五 · 春节风俗</h1><div class="year">2026 丙午马年 · 农历新年初五</div>
+        <div class="update-time" id="updateTime">最后更新：06:30 · 点击查看详情和热评</div>
         
         <div class="card">
-            <div class="card-title"><span class="icon">🗺️</span>正月初三风俗</div>
+            <div class="card-title"><span class="icon">🗺️</span>正月初五风俗</div>
+            <div class="hot-item" onclick="showDetail('chuwu',1)"><div class="rank rank-1">财神</div><div class="hot-content"><div class="hot-title">🧧 迎财神</div><div class="hot-desc">正月初五迎财神，求财纳福</div></div><span class="click-hint">></span></div>
+            <div class="hot-item" onclick="showDetail('chuwu',2)"><div class="rank rank-2">破五</div><div class="hot-content"><div class="hot-title">🔴 破五</div><div class="hot-desc">破除禁忌，开市营业</div></div><span class="click-hint">></span></div>
+            <div class="hot-item" onclick="showDetail('chuwu',3)"><div class="rank rank-3">开市</div><div class="hot-content"><div class="hot-title">🏪 店铺开市</div><div class="hot-desc">商家开业，营业第一天</div></div><span class="click-hint">></span></div>
+            <div class="hot-item" onclick="showDetail('chuwu',4)"><div class="rank rank-other">送穷</div><div class="hot-content"><div class="hot-title">🗑️ 送穷</div><div class="hot-desc">送穷出门，迎接富贵</div></div><span class="click-hint">></span></div>
+            <div class="hot-item" onclick="showDetail('chuwu',5)"><div class="rank rank-other">吃饺</div><div class="hot-content"><div class="hot-title">🥟 吃饺子</div><div class="hot-desc">捏住小人嘴，寓意如意</div></div><span class="click-hint">></span></div>
+            <div class="hot-item" onclick="showDetail('chuwu',6)"><div class="rank rank-other">放炮</div><div class="hot-content"><div class="hot-title">🎆 放鞭炮</div><div class="hot-desc">迎财神，放鞭炮庆祝</div></div><span class="click-hint">></span></div>
+        </div>
+        
+        <div class="card">
+            <div class="card-title"><span class="icon">🗺️</span>正月初四风俗</div>
             <div class="hot-item" onclick="showDetail('chusi',1)"><div class="rank rank-1">灶神</div><div class="hot-content"><div class="hot-title">🧧 迎灶神</div><div class="hot-desc">正月初四迎接灶神回宫</div></div><span class="click-hint">></span></div>
             <div class="hot-item" onclick="showDetail('chusi',2)"><div class="rank rank-2">五路</div><div class="hot-content"><div class="hot-title">🚪 接五路</div><div class="hot-desc">迎接五路财神，求财纳福</div></div><span class="click-hint">></span></div>
             <div class="hot-item" onclick="showDetail('chusi',3)"><div class="rank rank-3">折箩</div><div class="hot-content"><div class="hot-title">🥘 吃折箩</div><div class="hot-desc">吃剩菜剩饭，寓意年年有余</div></div><span class="click-hint">></span></div>
             <div class="hot-item" onclick="showDetail('chusi',4)"><div class="rank rank-other">扔穷</div><div class="hot-content"><div class="hot-title">🗑️ 扔穷</div><div class="hot-desc">打扫卫生，扔掉穷气</div></div><span class="click-hint">></span></div>
             <div class="hot-item" onclick="showDetail('chusi',5)"><div class="rank rank-other">开市</div><div class="hot-content"><div class="hot-title">🏪 店铺开市</div><div class="hot-desc">商家开业，营业第一天</div></div><span class="click-hint">></span></div>
+        </div>
+        
+        <div class="card">
+            <div class="card-title"><span class="icon">🗺️</span>正月初三风俗</div>
+            <div class="hot-item" onclick="showDetail('chusan',1)"><div class="rank rank-1">老鼠</div><div class="hot-content"><div class="hot-title">🐀 老鼠娶亲</div><div class="hot-desc">早睡晚起，不打扰老鼠</div></div><span class="click-hint">></span></div>
+            <div class="hot-item" onclick="showDetail('chusan',2)"><div class="rank rank-2">赤口</div><div class="hot-content"><div class="hot-title">🔴 贴赤口</div><div class="hot-desc">南方贴红纸，求和气</div></div><span class="click-hint">></span></div>
+            <div class="hot-item" onclick="showDetail('chusan',3)"><div class="rank rank-3">门神</div><div class="hot-content"><div class="hot-title">🚪 烧门神纸</div><div class="hot-desc">烧掉门神，准备出门</div></div><span class="click-hint">></span></div>
             <div class="hot-item" onclick="showDetail('chusan',4)"><div class="rank rank-other">合子</div><div class="hot-content"><div class="hot-title">🥟 吃合子</div><div class="hot-desc">寓意和和美美，北方习俗</div></div><span class="click-hint">></span></div>
-            <div class="hot-item" onclick="showDetail('chusan',5)"><div class="rank rank-other">休息</div><div class="hot-content"><div class="hot-title">💤 居家休息</div><div class="hot-desc">传统不出门，在家陪家人</div></div><span class="click-hint">></span></div>
-            <div class="hot-item" onclick="showDetail('chusan',6)"><div class="rank rank-other">回娘家</div><div class="hot-content"><div class="hot-title">👩‍👩‍👧 继续回娘家</div><div class="hot-desc">部分地区延续初二习俗</div></div><span class="click-hint">></span></div>
         </div>
         
         <div class="card">
@@ -81,8 +96,6 @@
             <div class="hot-item" onclick="showDetail('chuer',2)"><div class="rank rank-2">祭祖</div><div class="hot-content"><div class="hot-title">🙏 祭祖/上坟</div><div class="hot-desc">带供品祭拜祖先</div></div><span class="click-hint">></span></div>
             <div class="hot-item" onclick="showDetail('chuer',3)"><div class="rank rank-3">开年</div><div class="hot-content"><div class="hot-title">🍖 粤桂：开年饭</div><div class="hot-desc">祭祀后全家聚餐</div></div><span class="click-hint">></span></div>
             <div class="hot-item" onclick="showDetail('chuer',4)"><div class="rank rank-other">忌</div><div class="hot-content"><div class="hot-title">⚠️ 忌讳</div><div class="hot-desc">不动剪刀、不扫地、不借钱</div></div><span class="click-hint">></span></div>
-            <div class="hot-item" onclick="showDetail('chuer',5)"><div class="rank rank-other">北方</div><div class="hot-content"><div class="hot-title">🥟 北方：吃面条</div><div class="hot-desc">寓意条条顺，长长久久</div></div><span class="click-hint">></span></div>
-            <div class="hot-item" onclick="showDetail('chuer',6)"><div class="rank rank-other">财神</div><div class="hot-content"><div class="hot-title">🧧 迎财神</div><div class="hot-desc">商家/家庭摆供品迎财神</div></div><span class="click-hint">></span></div>
         </div>
         
         <div class="card">
@@ -91,8 +104,6 @@
             <div class="hot-item" onclick="showDetail('custom',2)"><div class="rank rank-2">南方</div><div class="hot-content"><div class="hot-title">🍜 南方 · 年糕/汤圆</div><div class="hot-desc">年糕寓意年年高 · 汤圆代表团圆</div></div><span class="click-hint">></span></div>
             <div class="hot-item" onclick="showDetail('custom',3)"><div class="rank rank-3">东北</div><div class="hot-content"><div class="hot-title">🎆 东北 · 踩高跷/扭秧歌</div><div class="hot-desc">热烈喜庆的集体活动</div></div><span class="click-hint">></span></div>
             <div class="hot-item" onclick="showDetail('custom',4)"><div class="rank rank-other">广东</div><div class="hot-content"><div class="hot-title">🧧 广东 · 拜年/逗利是</div><div class="hot-desc">红包习俗，金额讲究"意头"</div></div><span class="click-hint">></span></div>
-            <div class="hot-item" onclick="showDetail('custom',5)"><div class="rank rank-other">四川</div><div class="hot-content"><div class="hot-title">🔥 四川 · 放鞭炮/熏腊肉</div><div class="hot-desc">传统年味与美食</div></div><span class="click-hint">></span></div>
-            <div class="hot-item" onclick="showDetail('custom',6)"><div class="rank rank-other">福建</div><div class="hot-content"><div class="hot-title">🙏 福建 · 祭祖/游神</div><div class="hot-desc">热闹的宗族传统</div></div><span class="click-hint">></span></div>
         </div>
         
         <div class="card">
@@ -100,42 +111,12 @@
             <div class="hot-item" onclick="showDetail('weibo',1)"><div class="rank rank-1">1</div><div class="hot-content"><div class="hot-title">#王菲 春晚# <span class="platform-tag tag-weibo">微博</span></div><div class="hot-desc">12.6亿阅读 · 326万讨论</div></div><span class="click-hint">></span></div>
             <div class="hot-item" onclick="showDetail('weibo',2)"><div class="rank rank-2">2</div><div class="hot-content"><div class="hot-title">#郭富城王一博 闪耀动起来# <span class="platform-tag tag-weibo">微博</span></div><div class="hot-desc">8.3亿阅读</div></div><span class="click-hint">></span></div>
             <div class="hot-item" onclick="showDetail('weibo',3)"><div class="rank rank-3">3</div><div class="hot-content"><div class="hot-title">#春晚分会场# <span class="platform-tag tag-weibo">微博</span></div><div class="hot-desc">5.2亿阅读</div></div><span class="click-hint">></span></div>
-            <div class="hot-item" onclick="showDetail('weibo',4)"><div class="rank rank-other">4</div><div class="hot-content"><div class="hot-title">#明星红包雨# <span class="platform-tag tag-weibo">微博</span></div><div class="hot-desc">3.8亿阅读</div></div><span class="click-hint">></span></div>
-            <div class="hot-item" onclick="showDetail('weibo',5)"><div class="rank rank-other">5</div><div class="hot-content"><div class="hot-title">#迪丽热巴 春晚# <span class="platform-tag tag-weibo">微博</span></div><div class="hot-desc">2.9亿阅读</div></div><span class="click-hint">></span></div>
         </div>
         
         <div class="card">
             <div class="card-title"><span class="icon">🤖</span>AI/科技热点</div>
             <div class="hot-item" onclick="showDetail('ai',1)"><div class="rank rank-1">1</div><div class="hot-content"><div class="hot-title">春晚机器人表演 <span class="platform-tag tag-ai">科技</span></div><div class="hot-desc">具身机器人首次多企业同台 · 1.8亿</div></div><span class="click-hint">></span></div>
             <div class="hot-item" onclick="showDetail('ai',2)"><div class="rank rank-2">2</div><div class="hot-content"><div class="hot-title">8K+AI技术应用 <span class="platform-tag tag-ai">科技</span></div><div class="hot-desc">国产8K设备全链路 · 1.2亿</div></div><span class="click-hint">></span></div>
-            <div class="hot-item" onclick="showDetail('ai',3)"><div class="rank rank-3">3</div><div class="hot-content"><div class="hot-title">AIGC影像生成 <span class="platform-tag tag-ai">AI</span></div><div class="hot-desc">首次创新应用 · 8000万</div></div><span class="click-hint">></span></div>
-        </div>
-        
-        <div class="card">
-            <div class="card-title"><span class="icon">📕</span>小红书热点</div>
-            <div class="hot-item" onclick="showDetail('xhs',1)"><div class="rank rank-1">1</div><div class="hot-content"><div class="hot-title">春晚妆容教程 <span class="platform-tag tag-xhs">小红书</span></div><div class="hot-desc">320万+热度</div></div><span class="click-hint">></span></div>
-            <div class="hot-item" onclick="showDetail('xhs',2)"><div class="rank rank-2">2</div><div class="hot-content"><div class="hot-title">春晚穿搭盘点 <span class="platform-tag tag-xhs">小红书</span></div><div class="hot-desc">280万+热度</div></div><span class="click-hint">></span></div>
-            <div class="hot-item" onclick="showDetail('xhs',3)"><div class="rank rank-3">3</div><div class="hot-content"><div class="hot-title">年夜饭菜谱 <span class="platform-tag tag-xhs">小红书</span></div><div class="hot-desc">210万+热度</div></div><span class="click-hint">></span></div>
-        </div>
-        
-        <div class="card">
-            <div class="card-title"><span class="icon">💬</span>知乎热榜</div>
-            <div class="hot-item" onclick="showDetail('zhihu',1)"><div class="rank rank-1">1</div><div class="hot-content"><div class="hot-title">2026年春晚有哪些亮点？ <span class="platform-tag tag-zhihu">知乎</span></div><div class="hot-desc">1.2万回答</div></div><span class="click-hint">></span></div>
-            <div class="hot-item" onclick="showDetail('zhihu',2)"><div class="rank rank-2">2</div><div class="hot-content"><div class="hot-title">如何评价王菲春晚的新歌？ <span class="platform-tag tag-zhihu">知乎</span></div><div class="hot-desc">8000+回答</div></div><span class="click-hint">></span></div>
-        </div>
-        
-        <div class="card">
-            <div class="card-title"><span class="icon">📺</span>今晚看点</div>
-            <div class="show-item" onclick="showDetail('show',1)"><div class="show-name">🎤 王菲《你我经历的一刻》</div><span class="click-hint">></span></div>
-            <div class="show-item" onclick="showDetail('show',2)"><div class="show-name">🏎️ 郭富城+王一博</div><span class="click-hint">></span></div>
-            <div class="show-item" onclick="showDetail('show',3)"><div class="show-name">🎭 沈腾马丽 小品</div><span class="click-hint">></span></div>
-        </div>
-        
-        <div class="card">
-            <div class="card-title"><span class="icon">🎬</span>春节档票房</div>
-            <div class="show-item" onclick="showDetail('movie',1)"><div class="show-name">🥇 飞驰人生3</div><div style="color:#ff5722">~2亿</div></div>
-            <div class="show-item" onclick="showDetail('movie',2)"><div class="show-name">🥈 惊蛰无声</div></div>
-            <div class="show-item" onclick="showDetail('movie',3)"><div class="show-name">🥉 镖人</div></div>
         </div>
         
         <button class="refresh-btn" onclick="refreshData()">🔄 刷新数据</button>
@@ -152,109 +133,35 @@
     <script>
     const detailData={
         weibo:{
-            1:{title:'#王菲 春晚#',tags:['微博','明星','春晚'],readCount:'12.6亿阅读',content:'<h3>热度分析</h3><p>王菲第六次登上春晚，演唱《你我经历的一刻》，来自北大毕业生乐队ZaZaZsu。</p>',comments:[{user:'娱乐观察员',text:'王菲一开口，春晚弹幕直接炸屏！',likes:'2.3万'},{user:'资深娱乐编辑',text:'六登春晚，天后统治力！',likes:'1.8万'},{user:'音乐博主',text:'等了6年，声音还是那么空灵！',likes:'1.2万'},{user:'路人甲',text:'王菲保养得真好！',likes:'8900'},{user:'00后网友',text:'天籁之音！',likes:'6500'}]},
-            2:{title:'#郭富城王一博 闪耀动起来#',tags:['微博','明星'],readCount:'8.3亿阅读',content:'<h3>节目</h3><p>郭富城与王一博合作歌舞，两代舞台王者合作。</p>',comments:[{user:'舞蹈爱好者',text:'郭富城60岁还能跳成这样！',likes:'1.5万'},{user:'王一博粉丝',text:'梦幻联动！',likes:'1.2万'},{user:'80后回忆',text:'感动！',likes:'9800'}]},
-            3:{title:'#春晚分会场#',tags:['微博','春晚'],readCount:'5.2亿阅读',content:'<h3>四大分会场</h3><p>哈尔滨·义乌·合肥·宜宾</p>',comments:[{user:'哈尔滨人',text:'欢迎来冰雪大世界！',likes:'8900'},{user:'义乌商人',text:'义乌上春晚了！',likes:'7600'}]},
-            4:{title:'#明星红包雨#',tags:['微博','红包'],readCount:'3.8亿阅读',content:'<h3>活动</h3><p>150位明星发红包，总额超百万</p>',comments:[{user:'抢红包达人',text:'蹲了3小时，一分钱都没抢到！',likes:'1.1万'},{user:'幸运er',text:'抢到20块！',likes:'9800'}]},
-            5:{title:'#迪丽热巴 春晚#',tags:['微博','明星'],readCount:'2.9亿阅读',content:'<h3>节目</h3><p>宜宾分会场《立上游》</p>',comments:[{user:'颜狗',text:'迪丽热巴太美了！',likes:'1.3万'},{user:'川妹子',text:'宜宾分会场太有年味！',likes:'6700'}]}
+            1:{title:'#王菲 春晚#',tags:['微博','明星','春晚'],readCount:'12.6亿阅读',content:'<h3>热度分析</h3><p>王菲第六次登上春晚，演唱《你我经历的一刻》，来自北大毕业生乐队ZaZaZsu。</p>',comments:[{user:'娱乐观察员',text:'王菲一开口，春晚弹幕直接炸屏！',likes:'2.3万'},{user:'资深娱乐编辑',text:'六登春晚，天后统治力！',likes:'1.8万'}]},
+            2:{title:'#郭富城王一博 闪耀动起来#',tags:['微博','明星'],readCount:'8.3亿阅读',content:'<h3>节目</h3><p>郭富城与王一博合作歌舞，两代舞台王者合作。</p>',comments:[{user:'舞蹈爱好者',text:'郭富城60岁还能跳成这样！',likes:'1.5万'}]},
+            3:{title:'#春晚分会场#',tags:['微博','春晚'],readCount:'5.2亿阅读',content:'<h3>四大分会场</h3><p>哈尔滨·义乌·合肥·宜宾</p>',comments:[{user:'哈尔滨人',text:'欢迎来冰雪大世界！',likes:'8900'}]}
         },
         ai:{
-            1:{title:'春晚机器人表演',tags:['科技','AI','春晚'],readCount:'1.8亿阅读',content:'<h3>技术亮点</h3><p>具身机器人首次四家企业同台竞技</p>',comments:[{user:'科技爱好者',text:'中国机器人太牛了！',likes:'2.3万'},{user:'工程师',text:'技术进步明显！',likes:'1.8万'},{user:'科幻作家',text:'未来已来！',likes:'1.5万'},{user:'程序员',text:'中国速度！',likes:'1.2万'},{user:'AI研究员',text:'可以上台表演了！',likes:'9800'}]},
-            2:{title:'8K+AI技术应用',tags:['科技','8K'],readCount:'1.2亿阅读',content:'<h3>技术突破</h3><p>国产8K设备首次全链路应用</p>',comments:[{user:'电视从业者',text:'8K画质太清晰了！',likes:'9800'},{user:'摄影师',text:'国产崛起！',likes:'7600'},{user:'技术宅',text:'清晰到能看到毛孔！',likes:'3800'}]},
-            3:{title:'AIGC影像生成',tags:['AI','AIGC'],readCount:'8000万阅读',content:'<h3>首次应用</h3><p>AI生成影像用于节目制作</p>',comments:[{user:'AI从业者',text:'AIGC时代来了！',likes:'1.2万'},{user:'设计师',text:'要失业了？',likes:'9800'},{user:'创业者',text:'新风口！',likes:'5800'}]}
+            1:{title:'春晚机器人表演',tags:['科技','AI','春晚'],readCount:'1.8亿阅读',content:'<h3>技术亮点</h3><p>具身机器人首次四家企业同台竞技</p>',comments:[{user:'科技爱好者',text:'中国机器人太牛了！',likes:'2.3万'}]},
+            2:{title:'8K+AI技术应用',tags:['科技','8K'],readCount:'1.2亿阅读',content:'<h3>技术突破</h3><p>国产8K设备首次全链路应用</p>',comments:[{user:'电视从业者',text:'8K画质太清晰了！',likes:'9800'}]}
         },
-        xhs:{
-            1:{title:'春晚妆容教程',tags:['小红书','美妆'],readCount:'320万+',content:'<h3>内容</h3><p>王菲同款妆容教程</p>',comments:[{user:'美妆博主',text:'太高级了！学起来！',likes:'2.1万'},{user:'化妆小白',text:'学会了！',likes:'1.5万'},{user:'职场女性',text:'很适合通勤',likes:'9800'}]},
-            2:{title:'春晚穿搭盘点',tags:['小红书','时尚'],readCount:'280万+',content:'<h3>单品</h3><p>新中式外套·红色元素</p>',comments:[{user:'时尚博主',text:'今年水准太高了！',likes:'1.8万'},{user:'吃瓜群众',text:'种草了！',likes:'1.2万'}]},
-            3:{title:'年夜饭菜谱',tags:['小红书','美食'],readCount:'210万+',content:'<h3>热门</h3><p>年年有余·饺子</p>',comments:[{user:'美食达人',text:'收藏20个菜谱！',likes:'3.2万'},{user:'全职妈妈',text:'每年就等这个！',likes:'2.8万'}]}
-        },
-        zhihu:{
-            1:{title:'2026年春晚亮点？',tags:['知乎','春晚'],readCount:'1.2万回答',content:'<h3>讨论</h3><p>王菲·分会场·机器人</p>',comments:[{user:'电视从业者',text:'8K+AI技术领先全球',likes:'5600'},{user:'科技博主',text:'机器人太炫酷！',likes:'3800'}]},
-            2:{title:'如何评价王菲新歌？',tags:['知乎','明星'],readCount:'8000+回答',content:'<h3>歌曲</h3><p>ZaZaZsu·北大毕业生</p>',comments:[{user:'音乐制作人',text:'高级感',likes:'7800'},{user:'北大校友',text:'太争气了！',likes:'5600'}]}
-        },
-        show:{
-            1:{title:'王菲《你我经历的一刻》',tags:['春晚','歌曲'],content:'<h3>第6次春晚</h3><p>ZaZaZsu乐队</p>',comments:[{user:'音乐爱好者',text:'开口就知道值了！',likes:'3.1万'},{user:'菲迷',text:'等了6年！',likes:'2.8万'}]},
-            2:{title:'郭富城+王一博',tags:['春晚','歌舞'],content:'<h3>天王+顶流</h3>',comments:[{user:'综艺粉',text:'男神同框！',likes:'2.5万'},{user:'舞蹈生',text:'感染力太强！',likes:'1.8万'}]},
-            3:{title:'沈腾马丽 小品',tags:['春晚','小品'],content:'<h3>喜剧</h3>',comments:[{user:'喜剧粉',text:'必属精品！',likes:'2.1万'},{user:'笑点高',text:'太好笑了！',likes:'1.6万'}]}
-        },
-        movie:{
-            1:{title:'飞驰人生3',tags:['春节档','票房'],content:'<h3>票房</h3><p>~2亿 预测38-42亿</p>',comments:[{user:'影迷',text:'沈腾yyds！',likes:'1.8万'},{user:'全家桶',text:'笑到肚子疼！',likes:'9800'}]},
-            2:{title:'惊蛰无声',tags:['春节档','张艺谋'],content:'<h3>导演</h3><p>张艺谋·易烊千玺</p>',comments:[{user:'四字弟弟粉丝',text:'太帅了！',likes:'2.3万'},{user:'影评人',text:'张艺谋出手精品',likes:'1.5万'}]},
-            3:{title:'镖人',tags:['春节档','武侠'],content:'<h3>导演</h3><p>袁和平·谢霆锋</p>',comments:[{user:'武侠迷',text:'武侠片回来了！',likes:'1.6万'},{user:'动作片爱好者',text:'太精彩了！',likes:'1.1万'}]}
-        },
-        chuer:{
-            1:{title:'👩‍👩‍👧 回娘家',tags:['初二','回门','民俗'],content:'<h3>📍 地域</h3><p>全国大部分地区</p><h3>🗺️ 地图</h3><div style="background:#f5f5f5;padding:15px;border-radius:8px;text-align:center;margin:10px 0;"><p style="color:#666;">🗺️ 全国</p><p style="font-size:12px;color:#999;">出嫁女儿统一回娘家</p></div><h3>🧧 风俗介绍</h3><p>正月初二是"回门日"，出嫁的女儿会带着丈夫和孩子一起回娘家拜年。女儿要带"回门礼"，通常是烟酒、糖果、糕点等。</p><h3>🎁 礼物</h3><p>双数礼物为佳，讲究成双成对。如：两条烟、两瓶酒、糕点等。</p>',comments:[{user:'出嫁女',text:'每年初二最期待回娘家！',likes:'3.2万'},{user:'娘家人',text:'女儿回来全家团圆！',likes:'2.1万'},{user:'外孙控',text:'带孩子回娘家最开心！',likes:'1.5万'}]},
-            2:{title:'🙏 祭祖上坟',tags:['初二','祭祖','上坟'],content:'<h3>📍 地域</h3><p>北方地区为主</p><h3>🗺️ 地图</h3><div style="background:#f5f5f5;padding:15px;border-radius:8px;text-align:center;margin:10px 0;"><p style="color:#666;">🗺️ 北方地区</p><p style="font-size:12px;color:#999;">河北、山东、河南等地</p></div><h3>🧧 风俗介绍</h3><p>北方一些地区在正月初二要"上坟"祭祖，带着供品到祖先墓地拜祭，寓意新年伊始不忘祖先。</p><h3>🎁 供品</h3><p>通常带水果、糕点、酒、香烛等。</p>',comments:[{user:'北方人',text:'每年初二去给爷爷上坟',likes:'2.8万'},{user:'传统派',text:'不忘祖先才能走得更远',likes:'1.9万'},{user:'孝子贤孙',text:'这是我们的传统',likes:'1.2万'}]},
-            3:{title:'🍖 粤桂：开年饭',tags:['初二','开年','广东','广西'],content:'<h3>📍 地域</h3><p>广东、广西部分地区</p><h3>🗺️ 地图</h3><div style="background:#f5f5f5;padding:15px;border-radius:8px;text-align:center;margin:10px 0;"><p style="color:#666;">🗺️ 粤桂地区</p><p style="font-size:12px;color:#999;">广东、广西</p></div><h3>🧧 风俗介绍</h3><p>广东和广西部分地区在正月初二吃"开年饭"，祭祀祖先后全家聚餐，寓意新年开张大吉。</p><h3>🍽️ 菜品</h3><p>白切鸡、烧肉、虾、鱼等丰盛菜肴。</p>',comments:[{user:'广东人',text:'开年饭是每年最丰盛的一顿！',likes:'2.5万'},{user:'广西老表',text:'初二开年，恭喜发财！',likes:'1.8万'},{user:'吃货一枚',text:'最爱家里的开年饭！',likes:'1.3万'}]},
-            4:{title:'⚠️ 忌讳',tags:['初二','禁忌','民俗'],content:'<h3>📍 地域</h3><p>全国通用</p><h3>🗺️ 地图</h3><div style="background:#f5f5f5;padding:15px;border-radius:8px;text-align:center;margin:10px 0;"><p style="color:#666;">🗺️ 全国</p><p style="font-size:12px;color:#999;">传统禁忌</p></div><h3>🧧 风俗介绍</h3><p>正月初二有一些传统忌讳：</p><h3>⚫ 禁忌事项</h3><p>• 不动剪刀 - 避免"剪断"财路<br>• 不扫地 - 防止扫走财运<br>• 不借钱 - 避免财运外流<br>• 不午睡 - 避免懒惰</p>',comments:[{user:'传统老人',text:'这些规矩还是要注意的',likes:'2.1万'},{user:'新派90后',text:'有些禁忌不太信了',likes:'1.6万'},{user:'中立派',text:'宁可信其有吧',likes:'9800'}]},
-            5:{title:'🥟 北方：吃面条',tags:['初二','面条','北方'],content:'<h3>📍 地域</h3><p>北方地区</p><h3>🗺️ 地图</h3><div style="background:#f5f5f5;padding:15px;border-radius:8px;text-align:center;margin:10px 0;"><p style="color:#666;">🗺️ 北方地区</p><p style="font-size:12px;color:#999;">北京、天津、河北</p></div><h3>🧧 风俗介绍</h3><p>北方一些地区在正月初二吃面条，寓意"条条顺"，希望新的一年顺顺利利，面条越长越好。</p><h3>🍜 吃法</h3><p>炸酱面、打卤面、汤面等多种做法。</p>',comments:[{user:'北方人',text:'初二必须吃碗面！',likes:'1.9万'},{user:'面条控',text:'长长的面条寓意好！',likes:'1.2万'},{user:'妈妈味道',text:'还是家里的面最好吃',likes:'8500'}]},
-            6:{title:'🧧 迎财神',tags:['初二','财神','商家'],content:'<h3>📍 地域</h3><p>全国（商家为主）</p><h3>🗺️ 地图</h3><div style="background:#f5f5f5;padding:15px;border-radius:8px;text-align:center;margin:10px 0;"><p style="color:#666;">🗺️ 全国商家</p><p style="font-size:12px;color:#999;">商铺、企业</p></div><h3>🧧 风俗介绍</h3><p>正月初二是传统的"迎财神日"，尤其是商家会摆上丰盛的供品，迎接财神爷，祈求新年生意兴隆、财源广进。</p><h3>🎊 仪式</h3><p>放鞭炮、摆供品、贴财神像，祈求新年发大财。</p>',comments:[{user:'小老板',text:'初二迎财神，生意兴隆！',likes:'2.3万'},{user:'打工人',text:'希望财神爷也关照一下我！',likes:'1.8万'},{user:'商家后代',text:'家里年年都迎财神',likes:'1.1万'}]}
-        },
-        chusan:{
-            1:{title:'🐀 老鼠娶亲',tags:['初三','老鼠娶亲','民俗'],content:'<h3>📍 地域</h3><p>全国大部分地区</p><h3>🗺️ 地图</h3><div style="background:#f5f5f5;padding:15px;border-radius:8px;text-align:center;margin:10px 0;"><p style="color:#666;">🗺️ 全国</p><p style="font-size:12px;color:#999;">传统民间传说</p></div><h3>🧧 风俗介绍</h3><p>正月初三是"老鼠娶亲日"，传说这天晚上老鼠会举办婚礼。人们会早睡晚起，不打扰老鼠的好事，也寓意新一年不被老鼠打扰。</p><h3>💤 习俗</h3><p>• 初三晚上早睡<br>• 家里要点蜡烛照亮<br>• 不动针线剪刀</p>',comments:[{user:'传统老人',text:'小时候妈妈说初三要早点睡',likes:'2.8万'},{user:'民俗爱好者',text:'这个习俗很有趣！',likes:'1.9万'},{user:'网友A',text:'老鼠也要过年哈哈',likes:'1.2万'}]},
-            2:{title:'🔴 贴赤口',tags:['初三','赤口','民俗'],content:'<h3>📍 地域</h3><p>南方地区（港粤闽）</p><h3>🗺️ 地图</h3><div style="background:#f5f5f5;padding:15px;border-radius:8px;text-align:center;margin:10px 0;"><p style="color:#666;">🗺️ 港粤闽地区</p><p style="font-size:12px;color:#999;">香港、广东、福建</p></div><h3>🧧 风俗介绍</h3><p>正月初三"贴赤口"，在红纸上写上"开市大吉"等吉祥话贴于门上，寓意新一年不招口舌是非，与人和气生财。</p><h3>📝 写法</h3><p>通常写"开市大吉"、"万事如意"等吉祥话。</p>',comments:[{user:'广东人',text:'初三贴赤口，新年不吵架！',likes:'2.3万'},{user:'香港同胞',text:'香港还有这个习俗',likes:'1.8万'},{user:'福建朋友',text:'家里年年都贴',likes:'1.1万'}]},
-            3:{title:'🚪 烧门神纸',tags:['初三','门神','民俗'],content:'<h3>📍 地域</h3><p>部分地区</p><h3>🗺️ 地图</h3><div style="background:#f5f5f5;padding:15px;border-radius:8px;text-align:center;margin:10px 0;"><p style="color:#666;">🗺️ 部分地区</p><p style="font-size:12px;color:#999;">农村地区为主</p></div><h3>🧧 风俗介绍</h3><p>正月初三是"烧门神纸"的日子，人们会在门口烧掉门神画像，寓意新年出门顺利，平安吉祥。</p><h3>🎊 含义</h3><p>过了初三，年味渐淡，可以开始正常劳作。</p>',comments:[{user:'农村娃',text:'小时候看爷爷烧门神',likes:'1.9万'},{user:'传统派',text:'现在很少见了',likes:'1.3万'},{user:'文化爱好者',text:'传统习俗值得保留',likes:'8900'}]},
-            4:{title:'🥟 吃合子',tags:['初三','合子','北方'],content:'<h3>📍 地域</h3><p>北方地区</p><h3>🗺️ 地图</h3><div style="background:#f5f5f5;padding:15px;border-radius:8px;text-align:center;margin:10px 0;"><p style="color:#666;">🗺️ 北方地区</p><p style="font-size:12px;color:#999;">北京、天津、河北</p></div><h3>🧧 风俗介绍</h3><p>正月初三北方有吃"合子"的习俗。合子是一种圆形面食，里面包有馅料，寓意"和和美美"、"合家团圆"。</p><h3>🍽️ 馅料</h3><p>韭菜鸡蛋、猪肉白菜、虾仁等。</p>',comments:[{user:'北方人',text:'初三必须吃合子！',likes:'2.1万'},{user:'吃货一枚',text:'韭菜鸡蛋合子最香！',likes:'1.5万'},{user:'妈妈味道',text:'外婆包的合子最好吃',likes:'9800'}]},
-            5:{title:'💤 居家休息',tags:['初三','休息','民俗'],content:'<h3>📍 地域</h3><p>全国</p><h3>🗺️ 地图</h3><div style="background:#f5f5f5;padding:15px;border-radius:8px;text-align:center;margin:10px 0;"><p style="color:#666;">🗺️ 全国</p><p style="font-size:12px;color:#999;">传统习俗</p></div><h3>🧧 风俗介绍</h3><p>正月初三传统上要在家休息，不出门走亲访友。经过前两天的忙碌，这天正好在家陪陪家人，放松一下。</p><h3>🏠 活动</h3><p>在家看电视、打麻将、聊聊天都是不错的选择。</p>',comments:[{user:'宅男',text:'初三最适合在家宅着！',likes:'2.5万'},{user:'上班族',text:'难得清闲一天',likes:'1.8万'},{user:'家庭主妇',text:'在家陪陪孩子',likes:'1.2万'}]},
-            6:{title:'👩‍👩‍👧 继续回娘家',tags:['初三','回娘家','民俗'],content:'<h3>📍 地域</h3><p>部分地区</p><h3>🗺️ 地图</h3><div style="background:#f5f5f5;padding:15px;border-radius:8px;text-align:center;margin:10px 0;"><p style="color:#666;">🗺️ 部分地区</p><p style="font-size:12px;color:#999;">一些地区延续初二习俗</p></div><h3>🧧 风俗介绍</h3><p>部分地区回娘家习俗会延续到初三，初三仍然可以回娘家拜年。</p><h3>🎁 礼物</h3><p>同初二一样，带双数礼物。</p>',comments:[{user:'网友A',text:'我们这初三还能回娘家',likes:'1.6万'},{user:'网友B',text:'习俗因地而异',likes:'1.1万'},{user:'网友C',text:'娘家近就是好',likes:'7800'}]}
+        chuwu:{
+            1:{title:'🧧 迎财神',tags:['初五','财神','民俗'],content:'<h3>📍 地域</h3><p>全国</p><h3>🗺️ 地图</h3><div style="background:#f5f5f5;padding:15px;border-radius:8px;text-align:center;margin:10px 0;"><p style="color:#666;">🗺️ 全国</p><p style="font-size:12px;color:#999;">迎财神祈福</p></div><h3>🧧 风俗介绍</h3><p>正月初五"迎财神"，是春节最重要的习俗之一。民间传说财神在初五这天降临人间，人们会摆上丰盛的供品，燃放鞭炮，迎接财神到来，祈求新一年财运亨通、富贵盈门。</p><h3>🎊 习俗</h3><p>• 早起放鞭炮（接财神）<br>• 摆供品（水果、糕点、酒）<br>• 贴财神像<br>• 祈求新年发大财</p>',comments:[{user:'财神迷',text:'初五迎财神，发发发！',likes:'3.2万'},{user:'打工人',text:'希望财神爷关照！',likes:'2.5万'},{user:'小老板',text:'生意兴隆！',likes:'1.8万'}]},
+            2:{title:'🔴 破五',tags:['初五','破五','民俗'],content:'<h3>📍 地域</h3><p>全国</p><h3>🗺️ 地图</h3><div style="background:#f5f5f5;padding:15px;border-radius:8px;text-align:center;margin:10px 0;"><p style="color:#666;">🗺️ 全国</p><p style="font-size:12px;color:#999;">破除禁忌</p></div><h3>🧧 风俗介绍</h3><p>正月初五俗称"破五"，意味着春节期间的各种禁忌可以破除。之前几天不能做的事情，如动剪刀、扫地、倒垃圾等，到初五都可以做了。</p><h3>⚫ 破除禁忌</h3><p>• 可以动剪刀<br>• 可以扫地<br>• 可以倒垃圾<br>• 可以出门走亲访友</p>',comments:[{user:'传统派',text:'破五了，正常生活恢复！',likes:'2.1万'},{user:'上班族',text:'假期结束，准备上班！',likes:'1.6万'}]},
+            3:{title:'🏪 店铺开市',tags:['初五','开市','商家'],content:'<h3>📍 地域</h3><p>全国商家</p><h3>🗺️ 地图</h3><div style="background:#f5f5f5;padding:15px;border-radius:8px;text-align:center;margin:10px 0;"><p style="color:#666;">🗺️ 全国商铺</p><p style="font-size:12px;color:#999;">商家开业</p></div><h3>🧧 风俗介绍</h3><p>正月初五是商家"开市"的日子。经过初一到初四的休息，店铺在这天重新开业，迎接财神，祈求新年生意兴隆、财源广进。</p><h3>🎊 仪式</h3><p>• 放鞭炮庆祝<br>• 贴红对联<br>• 请客吃饭<br>• 恢复正常营业</p>',comments:[{user:'生意人',text:'开市大吉！',likes:'2.8万'},{user:'店员A',text:'又要上班了！',likes:'1.9万'}]},
+            4:{title:'🗑️ 送穷',tags:['初五','送穷','民俗'],content:'<h3>📍 地域</h3><p>全国</p><h3>🗺️ 地图</h3><div style="background:#f5f5f5;padding:15px;border-radius:8px;text-align:center;margin:10px 0;"><p style="color:#666;">🗺️ 全国</p><p style="font-size:12px;color:#999;">送穷迎富</p></div><h3>🧧 风俗介绍</h3><p>正月初五"送穷"，要把穷鬼送走。人们会打扫房间，把垃圾倒掉，寓意把贫穷、晦气都送走，迎接富贵到来。</p><h3>🧹 习俗</h3><p>• 打扫卫生<br>• 倒垃圾<br>• 送穷出门<br>• 迎接福气</p>',comments:[{user:'家政达人',text:'初五大扫除！',likes:'1.8万'},{user:'传统派',text:'送穷迎富！',likes:'1.3万'}]},
+            5:{title:'🥟 吃饺子',tags:['初五','饺子','北方'],content:'<h3>📍 地域</h3><p>北方地区</p><h3>🗺️ 地图</h3><div style="background:#f5f5f5;padding:15px;border-radius:8px;text-align:center;margin:10px 0;"><p style="color:#666;">🗺️ 北方地区</p><p style="font-size:12px;color:#999;">北京、天津、河北</p></div><h3>🧧 风俗介绍</h3><p>正月初五北方吃饺子，俗称"捏小人嘴"。包饺子时要用手把饺子边捏紧，寓意捏住小人的嘴，不让小人搬弄是非。</p><h3>🍽️ 吃法</h3><p>猪肉白菜、韭菜鸡蛋、三鲜等馅料。</p>',comments:[{user:'北方人',text:'破五吃饺子！',likes:'2.3万'},{user:'吃货一枚',text:'饺子最好吃！',likes:'1.5万'}]},
+            6:{title:'🎆 放鞭炮',tags:['初五','鞭炮','庆祝'],content:'<h3>📍 地域</h3><p>全国</p><h3>🗺️ 地图</h3><div style="background:#f5f5f5;padding:15px;border-radius:8px;text-align:center;margin:10px 0;"><p style="color:#666;">🗺️ 全国</p><p style="font-size:12px;color:#999;">庆祝活动</p></div><h3>🧧 风俗介绍</h3><p>正月初五放鞭炮是迎财神的重要组成部分。人们相信鞭炮声可以驱赶邪气，迎接财神，带来好运。</p><h3>🎊 寓意</h3><p>• 迎接财神<br>• 驱赶邪气<br>• 庆祝新年<br>• 带来好运</p>',comments:[{user:'热闹爱好者',text:'放鞭炮最有过年气氛！',likes:'2.5万'},{user:'环保派',text:'注意环保和安全！',likes:'1.2万'}]}
         },
         chusi:{
-            1:{title:'🧧 迎灶神',tags:['初四','灶神','民俗'],content:'<h3>📍 地域</h3><p>全国大部分地区</p><h3>🗺️ 地图</h3><div style="background:#f5f5f5;padding:15px;border-radius:8px;text-align:center;margin:10px 0;"><p style="color:#666;">🗺️ 全国</p><p style="font-size:12px;color:#999;">传统习俗</p></div><h3>🧧 风俗介绍</h3><p>正月初四是"迎灶神日"，灶王爷会在这一天返回人间。人们会准备丰盛的祭品迎接灶神，祈求新一年五谷丰登、灶火旺盛。</p><h3>🎊 习俗</h3><p>• 准备糖果、糕点<br>• 贴灶神画像<br>• 祈福求财</p>',comments:[{user:'传统老人',text:'迎灶神，求平安！',likes:'3.2万'},{user:'美食爱好者',text:'又可以吃好吃的了！',likes:'2.1万'},{user:'网友A',text:'灶神要回来了',likes:'1.5万'}]},
-            2:{title:'🚪 接五路',tags:['初四','五路','财神'],content:'<h3>📍 地域</h3><p>全国（商家为主）</p><h3>🗺️ 地图</h3><div style="background:#f5f5f5;padding:15px;border-radius:8px;text-align:center;margin:10px 0;"><p style="color:#666;">🗺️ 全国商家</p><p style="font-size:12px;color:#999;">商铺、企业</p></div><h3>🧧 风俗介绍</h3><p>正月初四"接五路"，即迎接五路财神（东、西、南、北、中）。商家会在这一天摆上供品，祈求新年生意兴隆、财源广进。</p><h3>🎁 供品</h3><p>通常用糖果、水果、酒等。</p>',comments:[{user:'小老板',text:'接五路，发大财！',likes:'2.8万'},{user:'打工人',text:'希望财神爷关照！',likes:'1.9万'},{user:'商家后代',text:'家里年年都接五路',likes:'1.2万'}]},
-            3:{title:'🥘 吃折箩',tags:['初四','折箩','民俗'],content:'<h3>📍 地域</h3><p>北方地区</p><h3>🗺️ 地图</h3><div style="background:#f5f5f5;padding:15px;border-radius:8px;text-align:center;margin:10px 0;"><p style="color:#666;">🗺️ 北方地区</p><p style="font-size:12px;color:#999;">北京、天津、河北</p></div><h3>🧧 风俗介绍</h3><p>正月初四吃"折箩"，就是把前几天的剩菜剩饭混在一起吃掉，寓意"年年有余"、"不浪费粮食"。</p><h3>🍽️ 吃法</h3><p>大杂烩、剩菜炒饭等。</p>',comments:[{user:'北方人',text:'折箩才是年味！',likes:'2.3万'},{user:'节俭派',text:'粒粒皆辛苦',likes:'1.6万'},{user:'网友A',text:'现在剩菜少了',likes:'9800'}]},
-            4:{title:'🗑️ 扔穷',tags:['初四','扔穷','民俗'],content:'<h3>📍 地域</h3><p>全国</p><h3>🗺️ 地图</h3><div style="background:#f5f5f5;padding:15px;border-radius:8px;text-align:center;margin:10px 0;"><p style="color:#666;">🗺️ 全国</p><p style="font-size:12px;color:#999;">传统习俗</p></div><h3>🧧 风俗介绍</h3><p>正月初四"扔穷"，就是在这天打扫卫生，把垃圾和"穷气"都扔掉，寓意新一年贫穷远离、富贵到来。</p><h3>🧹 习俗</h3><p>• 打扫房间<br>• 倒垃圾<br>• 换新扫帚</p>',comments:[{user:'家政达人',text:'初四大扫除！',likes:'1.8万'},{user:'传统派',text:'扔穷除晦气',likes:'1.3万'},{user:'网友A',text:'新年新气象',likes:'8900'}]},
-            5:{title:'🏪 店铺开市',tags:['初四','开市','商家'],content:'<h3>📍 地域</h3><p>全国（商家）</p><h3>🗺️ 地图</h3><div style="background:#f5f5f5;padding:15px;border-radius:8px;text-align:center;margin:10px 0;"><p style="color:#666;">🗺️ 全国商铺</p><p style="font-size:12px;color:#999;">店铺、企业</p></div><h3>🧧 风俗介绍</h3><p>正月初四很多商家会选择在这一天开业，迎接灶神和财神，祈求新年生意兴隆。开业当天要放鞭炮、贴红对联。</p><h3>🎊 仪式</h3><p>• 放鞭炮<br>• 贴对联<br>• 请客吃饭</p>',comments:[{user:'生意人',text:'初四开市，大吉大利！',likes:'2.5万'},{user:'店员A',text:'又要上班了',likes:'1.7万'},{user:'网友B',text:'希望今年生意好',likes:'1.1万'}]}
+            1:{title:'🧧 迎灶神',tags:['初四','灶神','民俗'],content:'<h3>📍 地域</h3><p>全国大部分地区</p><h3>🗺️ 地图</h3><div style="background:#f5f5f5;padding:15px;border-radius:8px;text-align:center;margin:10px 0;"><p style="color:#666;">🗺️ 全国</p><p style="font-size:12px;color:#999;">传统习俗</p></div><h3>🧧 风俗介绍</h3><p>正月初四是"迎灶神日"，灶王爷会在这一天返回人间。人们会准备丰盛的祭品迎接灶神，祈求新一年五谷丰登、灶火旺盛。</p>',comments:[{user:'传统老人',text:'迎灶神，求平安！',likes:'3.2万'}]},
+            2:{title:'🚪 接五路',tags:['初四','五路','财神'],content:'<h3>📍 地域</h3><p>全国（商家为主）</p><h3>🧧 风俗介绍</h3><p>正月初四"接五路"，即迎接五路财神（东、西、南、北、中）。商家会在这一天摆上供品，祈求新年生意兴隆、财源广进。</p>',comments:[{user:'小老板',text:'接五路，发大财！',likes:'2.8万'}]},
+            3:{title:'🥘 吃折箩',tags:['初四','折箩','民俗'],content:'<h3>📍 地域</h3><p>北方地区</p><h3>🧧 风俗介绍</h3><p>正月初四吃"折箩"，就是把前几天的剩菜剩饭混在一起吃掉，寓意"年年有余"、"不浪费粮食"。</p>',comments:[{user:'北方人',text:'折箩才是年味！',likes:'2.3万'}]},
+            4:{title:'🗑️ 扔穷',tags:['初四','扔穷','民俗'],content:'<h3>📍 地域</h3><p>全国</p><h3>🧧 风俗介绍</h3><p>正月初四"扔穷"，就是在这天打扫卫生，把垃圾和"穷气"都扔掉，寓意新一年贫穷远离、富贵到来。</p>',comments:[{user:'家政达人',text:'初四大扫除！',likes:'1.8万'}]},
+            5:{title:'🏪 店铺开市',tags:['初四','开市','商家'],content:'<h3>📍 地域</h3><p>全国（商家）</p><h3>🧧 风俗介绍</h3><p>正月初四很多商家会选择在这一天开业，迎接灶神和财神，祈求新年生意兴隆。</p>',comments:[{user:'生意人',text:'初四开市，大吉大利！',likes:'2.5万'}]}
         },
-        custom:{
-            1:{title:'🧧 北方·吃饺子',tags:['北方','春节','民俗'],content:'<h3>📍 地域</h3><p>北京、天津、河北、东北、山东等北方地区</p><h3>🗺️ 地图</h3><div style="background:#f5f5f5;padding:15px;border-radius:8px;text-align:center;margin:10px 0;"><p style="color:#666;">🗺️ 中国北方地区</p><p style="font-size:12px;color:#999;">东北、华北、山东等地</p></div><h3>🧧 风俗介绍</h3><p>北方人过年必吃饺子，形如元宝，寓意"招财进宝"。包饺子时会在其中1-2个饺子中放入硬币，吃到的人寓意新年好运。</p><h3>🍽️ 特色</h3><p>除夕夜全家一起包饺子，初一早上煮饺子，配以腊八蒜等小菜。</p>',comments:[{user:'北方人',text:'从小到大过年必吃饺子！',likes:'3.2万'},{user:'东北小可爱',text:'我家还会在饺子里放糖！',likes:'1.8万'},{user:'北京土著',text:'饺子和腊八蒜是绝配！',likes:'9800'}]},
-            2:{title:'🍜 南方·年糕汤圆',tags:['南方','春节','民俗'],content:'<h3>📍 地域</h3><p>上海、江苏、浙江、广东、福建等南方地区</p><h3>🗺️ 地图</h3><div style="background:#f5f5f5;padding:15px;border-radius:8px;text-align:center;margin:10px 0;"><p style="color:#666;">🗺️ 中国南方地区</p><p style="font-size:12px;color:#999;">华东、华南地区</p></div><h3>🧧 风俗介绍</h3><p>南方过年吃年糕和汤圆。年糕寓意"年年高升"，汤圆代表团圆美满。</p><h3>🍽️ 特色</h3><p>上海年糕甜糯可口；广东汤圆有咸甜之分；福建闽南地区吃"甜粿"。</p>',comments:[{user:'上海宁',text:'排骨年糕是真的好吃！',likes:'2.5万'},{user:'广东人',text:'汤圆要吃咸的！',likes:'1.9万'},{user:'浙江小囡',text:'外婆做的年糕最香！',likes:'1.2万'}]},
-            3:{title:'🎆 东北·秧歌高跷',tags:['东北','春节','民俗'],content:'<h3>📍 地域</h3><p>辽宁、吉林、黑龙江</p><h3>🗺️ 地图</h3><div style="background:#f5f5f5;padding:15px;border-radius:8px;text-align:center;margin:10px 0;"><p style="color:#666;">🗺️ 东北地区</p><p style="font-size:12px;color:#999;">辽宁、吉林、黑龙江</p></div><h3>🧧 风俗介绍</h3><p>东北过年非常热闹，踩高跷、扭秧歌是传统项目。全村人一起参与，敲锣打鼓，载歌载舞。</p><h3>🎭 特色</h3><p>从除夕一直持续到正月十五，街头巷尾都能看到秧歌队伍。</p>',comments:[{user:'东北银',text:'过年不扭秧歌那叫过年？',likes:'4.1万'},{user:'南方小伙伴',text:'东北过年太热闹了！',likes:'2.3万'},{user:'在外游子',text:'想家里的秧歌了！',likes:'1.5万'}]},
-            4:{title:'🧧 广东·拜年逗利是',tags:['广东','春节','民俗'],content:'<h3>📍 地域</h3><p>广东省</p><h3>🗺️ 地图</h3><div style="background:#f5f5f5;padding:15px;border-radius:8px;text-align:center;margin:10px 0;"><p style="color:#666;">🗺️ 广东省</p><p style="font-size:12px;color:#999;">珠三角、粤东、粤西</p></div><h3>🧧 风俗介绍</h3><p>广东过年最重要是"逗利是"（要红包）。已婚人士要给未婚者发红包，红包金额不大但讲究"意头"，通常5元、10元、20元。</p><h3>🍽️ 特色</h3><p>年夜饭必有白切鸡、蒸鱼；年初一吃斋菜；年初二开年吃腊味。</p>',comments:[{user:'广东靓仔',text:'利是利是，大吉大利！',likes:'3.8万'},{user:'打工人',text:'今年收了几千块利是！',likes:'2.1万'},{user:'新广州人',text:'习俗太有意思了！',likes:'1.3万'}]},
-            5:{title:'🔥 四川·放鞭炮熏腊肉',tags:['四川','春节','民俗'],content:'<h3>📍 地域</h3><p>四川、重庆</p><h3>🗺️ 地图</h3><div style="background:#f5f5f5;padding:15px;border-radius:8px;text-align:center;margin:10px 0;"><p style="color:#666;">🗺️ 川蜀地区</p><p style="font-size:12px;color:#999;">四川、重庆</p></div><h3>🧧 风俗介绍</h3><p>四川过年放鞭炮是重头戏，从除夕夜一直放到天亮。此外熏制腊肉、香肠是年前必备。</p><h3>🍖 特色</h3><p>腊肉、香肠、酱肉是年夜饭主角；初一吃汤圆或面条；火锅是必备。</p>',comments:[{user:'四川娃子',text:'放鞭炮才是年味！',likes:'2.9万'},{user:'吃货一枚',text:'想念老家的腊肉了！',likes:'2.1万'},{user:'火锅爱好者',text:'过年必须吃火锅！',likes:'1.8万'}]},
-            6:{title:'🙏 福建·祭祖游神',tags:['福建','春节','民俗'],content:'<h3>📍 地域</h3><p>福建（闽南地区）</p><h3>🗺️ 地图</h3><div style="background:#f5f5f5;padding:15px;border-radius:8px;text-align:center;margin:10px 0;"><p style="color:#666;">🗺️ 闽南地区</p><p style="font-size:12px;color:#999;">厦门、泉州、漳州</p></div><h3>🧧 风俗介绍</h3><p>福建闽南地区宗族观念强，过年非常重要的活动是祭祖和"游神"。抬着神明塑像游街，祈求平安。</p><h3>🏮 特色</h3><p>除夕夜祭祖；年初一走亲访友；年初五迎财神；元霄节游灯。</p>',comments:[{user:'闽南儿女',text:'游神是童年最深的记忆！',likes:'3.5万'},{user:'海外华人',text:'家乡的习俗永远难忘！',likes:'2.2万'},{user:'文化传承者',text:'这些传统必须传承下去！',likes:'1.6万'}]}
-        }
-    };
-    
-    function showDetail(platform,id){
-        const data=detailData[platform]&&detailData[platform][id];
-        if(!data)return;
-        document.getElementById('modalTitle').textContent=data.title;
-        let tagsHtml=data.tags.map(t=>'<span class="modal-tag" style="background:#666;color:#fff">'+t+'</span>').join('');
-        if(data.readCount)tagsHtml+='<span class="modal-tag" style="background:#ff5722;color:#fff">'+data.readCount+'</span>';
-        let contentHtml=tagsHtml+(data.content||'');
-        if(data.comments&&data.comments.length){
-            contentHtml+='<div class="comment-section"><h3>💬 热门评论 ('+data.comments.length+'条)</h3>';
-            data.comments.forEach(function(c,i){
-                contentHtml+='<div class="comment-item"><div class="comment-header"><div class="comment-avatar">'+c.user[0]+'</div><div class="comment-user">'+c.user+'</div><div class="comment-time">'+(i+1)+'楼</div></div><div class="comment-content">'+c.text+'</div><div class="comment-likes">👍 '+c.likes+'</div></div>';
-            });
-            contentHtml+='</div>';
-        }
-        document.getElementById('modalBody').innerHTML=contentHtml;
-        document.getElementById('modal').classList.add('active');
-    }
-    
-    function closeModal(e){
-        if(!e||e.target===e.currentTarget){
-            document.getElementById('modal').classList.remove('active');
-        }
-    }
-    
-    function updateTime(){
-        var n=new Date(),h=String(n.getHours()).padStart(2,'0'),m=String(n.getMinutes()).padStart(2,'0');
-        document.getElementById('updateTime').textContent='最后更新：'+h+':'+m+' · 点击查看详情和热评';
-    }
-    
-    function refreshData(){
-        var b=document.querySelector('.refresh-btn');
-        b.textContent='⏳ 加载中...';
-        setTimeout(function(){
-            updateTime();
-            b.textContent='✓ 已更新';
-            setTimeout(function(){b.textContent='🔄 刷新数据';},1500);
-        },1000);
-    }
-    
-    updateTime();
-    </script>
-</body>
-</html>
+        chusan:{
+            1:{title:'🐀 老鼠娶亲',tags:['初三','老鼠娶亲','民俗'],content:'<h3>📍 地域</h3><p>全国大部分地区</p><h3>🧧 风俗介绍</h3><p>正月初三是"老鼠娶亲日"，传说这天晚上老鼠会举办婚礼。人们会早睡晚起，不打扰老鼠的好事。</p>',comments:[{user:'传统老人',text:'小时候妈妈说初三要早点睡',likes:'2.8万'}]},
+            2:{title:'🔴 贴赤口',tags:['初三','赤口','民俗'],content:'<h3>📍 地域</h3><p>南方地区（港粤闽）</p><h3>🧧 风俗介绍</h3><p>正月初三"贴赤口"，在红纸上写上吉祥话贴于门上，寓意新一年不招口舌是非。</p>',comments:[{user:'广东人',text:'初三贴赤口，新年不吵架！',likes:'2.3万'}]},
+            3:{title:'🚪 烧门神纸',tags:['初三','门神','民俗'],content:'<h3>📍 地域</h3><p>部分地区</p><h3>🧧 风俗介绍</h3><p>正月初三是"烧门神纸"的日子，人们会在门口烧掉门神画像。</p>',comments:[{user:'农村娃',text:'小时候看爷爷烧门神',likes:'1.9万'}]},
+            4:{title:'🥟 吃合子',tags:['初三','合子','北方'],content:'<h3>📍 地域</h3><p>北方地区</p><h3>🧧 风俗介绍</h3><p>正月初三北方有吃"合子"的习俗，寓意"和和美美"、"合家团圆"。</p>',comments:[{user:'北方人',text:'初三必须吃合子！',likes:'2.1万'}]}
+        },
+        chuer:{
+            1:{title:'👩‍👩‍👧 回娘家',tags:['初二','回门','民俗'],content:'<h3>📍 地域</h3><p>全国大部分地区</p><h3>🧧 风俗介绍</h3><p>正月初二是"回门日"，出嫁的女儿会带着丈夫和孩子一起回娘家拜年。</p>',comments:[{user:'出嫁女',text:'每年初二最期待回娘家！',likes:'3.2万'}]},
+            2:{title:'🙏 祭祖上坟',tags:['初二','祭祖','上坟'],content:'<h3>📍
