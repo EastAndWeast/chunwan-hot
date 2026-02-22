@@ -13,8 +13,8 @@
         .header .year { font-size: 15px; opacity: 0.9; }
         .update-time { text-align: center; color: #ffcdd2; font-size: 12px; margin-bottom: 12px; }
         .card { background: #fff; border-radius: 14px; padding: 16px; margin-bottom: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
-        .card-title { font-size: 15px; font-weight: 600; color: #333; margin-bottom: 12px; display:: center; gap: 8px; }
-        .card-title .icon { font-size: flex; align-items 17px; }
+        .card-title { font-size: 15px; font-weight: 600; color: #333; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+        .card-title .icon { font-size: 17px; }
         .hot-item { display: flex; align-items: flex-start; padding: 10px 0; border-bottom: 1px solid #f0f0f0; cursor: pointer; margin: 0 -16px; padding-left: 16px; padding-right: 16px; }
         .hot-item:hover, .hot-item:active { background: #f9f9f9; }
         .hot-item:last-child { border-bottom: none; }
@@ -34,37 +34,134 @@
         .click-hint { font-size: 10px; color: #ccc; margin-left: auto; flex-shrink: 0; }
         .refresh-btn { display: block; width: 100%; padding: 12px; background: #ffcdd2; color: #c62828; border: none; border-radius: 10px; font-size: 14px; font-weight: 600; cursor: pointer; text-align: center; margin-top: 8px; }
         .footer { text-align: center; color: #ffcdd2; font-size: 11px; margin-top: 16px; padding-bottom: 16px; }
+        .show-item { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 13px; cursor: pointer; margin: 0 -16px; padding-left: 16px; padding-right: 16px; }
+        .show-item:hover { background: #f9f9f9; }
+        .show-item:last-child { border-bottom: none; }
+        .modal-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.6); z-index: 1000; justify-content: center; align-items: flex-end; }
+        .modal-overlay.active { display: flex; }
+        .modal-content { background: #fff; width: 100%; max-width: 500px; border-radius: 20px 20px 0 0; padding: 24px; max-height: 90vh; overflow-y: auto; animation: slideUp 0.3s ease; }
+        @keyframes slideUp { from { transform: translateY(100%); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        .modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid #eee; }
+        .modal-title { font-size: 18px; font-weight: 600; color: #333; }
+        .modal-close { width: 32px; height: 32px; border-radius: 50%; background: #f5f5f5; border: none; font-size: 18px; cursor: pointer; }
+        .modal-body { font-size: 14px; line-height: 1.6; color: #666; }
+        .modal-body h3 { font-size: 15px; color: #333; margin-top: 16px; margin-bottom: 8px; }
+        .modal-body p { margin-bottom: 8px; }
+        .modal-tag { display: inline-block; padding: 4px 12px; border-radius: 12px; font-size: 12px; margin-right: 8px; margin-bottom: 8px; }
+        .comment-item { background: #f9f9f9; border-radius: 12px; padding: 12px; margin-bottom: 10px; }
+        .comment-header { display: flex; align-items: center; margin-bottom: 8px; }
+        .comment-avatar { width: 28px; height: 28px; border-radius: 50%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; margin-right: 8px; }
+        .comment-user { font-size: 13px; color: #333; font-weight: 500; }
+        .comment-time { font-size: 11px; color: #999; margin-left: auto; }
+        .comment-content { font-size: 13px; color: #555; line-height: 1.5; }
+        .comment-likes { font-size: 11px; color: #ff5722; margin-top: 6px; }
+        .comment-section h3 { display: flex; align-items: center; gap: 6px; margin-top: 20px; }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="header"><h1>🧧 正月初六 · 春节风俗</h1><div class="year">2026 丙午马年 · 农历新年初六</div>
-        <div class="update-time" id="updateTime">最后更新：09:40 · 点击查看详情</div>
+        <div class="header"><h1>🧧 正月初六 · 春节风俗</h1><div class="year">2026 丙午马年 · 农历新年初五</div>
+        <div class="update-time" id="updateTime">最后更新：06:30 · 点击查看详情和热评</div>
         
         <div class="card">
             <div class="card-title"><span class="icon">🗺️</span>正月初六风俗</div>
-            <div class="hot-item"><div class="rank rank-1">送穷</div><div class="hot-content"><div class="hot-title">🗑️ 送穷日</div><div class="hot-desc">送穷出门，迎接富贵</div></div></div>
-            <div class="hot-item"><div class="rank rank-2">启市</div><div class="hot-content"><div class="hot-title">🏪 商家开市</div><div class="hot-desc">店铺全面恢复营业</div></div></div>
-            <div class="hot-item"><div class="rank rank-3">挹肥</div><div class="hot-content"><div class="hot-title">🚽 挹肥</div><div class="hot-desc">可以清理厕所施肥</div></div></div>
-            <div class="hot-item"><div class="rank rank-other">开航</div><div class="hot-content"><div class="hot-title">⚓ 开航出海</div><div class="hot-desc">渔民出海捕鱼</div></div></div>
-            <div class="hot-item"><div class="rank rank-other">送神</div><div class="hot-content"><div class="hot-title">🙏 送年</div><div class="hot-desc">送走祖先神灵</div></div></div>
-            <div class="hot-item"><div class="rank rank-other">游玩</div><div class="hot-content"><div class="hot-title">🎪 出门游玩</div><div class="hot-desc">外出踏青赏春</div></div></div>
-        </div>
-        
-        <div class="card">
-            <div class="card-title"><span class="icon">🗺️</span>正月初五风俗</div>
-            <div class="hot-item"><div class="rank rank-1">财神</div><div class="hot-content"><div class="hot-title">🧧 迎财神</div><div class="hot-desc">正月初五迎财神，求财纳福</div></div></div>
-            <div class="hot-item"><div class="rank rank-2">破五</div><div class="hot-content"><div class="hot-title">🔴 破五</div><div class="hot-desc">破除禁忌，开市营业</div></div></div>
-            <div class="hot-item"><div class="rank rank-3">开市</div><div class="hot-content"><div class="hot-title">🏪 店铺开市</div><div class="hot-desc">商家开业，营业第一天</div></div></div>
+            <div class="hot-item" onclick="showDetail('chuwu',1)"><div class="rank rank-1">财神</div><div class="hot-content"><div class="hot-title">🧧 迎财神</div><div class="hot-desc">正月初六迎财神，求财纳福</div></div><span class="click-hint">></span></div>
+            <div class="hot-item" onclick="showDetail('chuwu',2)"><div class="rank rank-2">破五</div><div class="hot-content"><div class="hot-title">🔴 破五</div><div class="hot-desc">破除禁忌，开市营业</div></div><span class="click-hint">></span></div>
+            <div class="hot-item" onclick="showDetail('chuwu',3)"><div class="rank rank-3">开市</div><div class="hot-content"><div class="hot-title">🏪 店铺开市</div><div class="hot-desc">商家开业，营业第一天</div></div><span class="click-hint">></span></div>
+            <div class="hot-item" onclick="showDetail('chuwu',4)"><div class="rank rank-other">送穷</div><div class="hot-content"><div class="hot-title">🗑️ 送穷</div><div class="hot-desc">送穷出门，迎接富贵</div></div><span class="click-hint">></span></div>
+            <div class="hot-item" onclick="showDetail('chuwu',5)"><div class="rank rank-other">吃饺</div><div class="hot-content"><div class="hot-title">🥟 吃饺子</div><div class="hot-desc">捏住小人嘴，寓意如意</div></div><span class="click-hint">></span></div>
+            <div class="hot-item" onclick="showDetail('chuwu',6)"><div class="rank rank-other">放炮</div><div class="hot-content"><div class="hot-title">🎆 放鞭炮</div><div class="hot-desc">迎财神，放鞭炮庆祝</div></div><span class="click-hint">></span></div>
         </div>
         
         <div class="card">
             <div class="card-title"><span class="icon">🗺️</span>正月初四风俗</div>
-            <div class="hot-item"><div class="rank rank-1">灶神</div><div class="hot-content"><div class="hot-title">🧧 迎灶神</div><div class="hot-desc">正月初四迎接灶神回宫</div></div></div>
-            <div class="hot-item"><div class="rank rank-2">五路</div><div class="hot-content"><div class="hot-title">🚪 接五路</div><div class="hot-desc">迎接五路财神</div></div></div>
+            <div class="hot-item" onclick="showDetail('chusi',1)"><div class="rank rank-1">灶神</div><div class="hot-content"><div class="hot-title">🧧 迎灶神</div><div class="hot-desc">正月初四迎接灶神回宫</div></div><span class="click-hint">></span></div>
+            <div class="hot-item" onclick="showDetail('chusi',2)"><div class="rank rank-2">五路</div><div class="hot-content"><div class="hot-title">🚪 接五路</div><div class="hot-desc">迎接五路财神，求财纳福</div></div><span class="click-hint">></span></div>
+            <div class="hot-item" onclick="showDetail('chusi',3)"><div class="rank rank-3">折箩</div><div class="hot-content"><div class="hot-title">🥘 吃折箩</div><div class="hot-desc">吃剩菜剩饭，寓意年年有余</div></div><span class="click-hint">></span></div>
+            <div class="hot-item" onclick="showDetail('chusi',4)"><div class="rank rank-other">扔穷</div><div class="hot-content"><div class="hot-title">🗑️ 扔穷</div><div class="hot-desc">打扫卫生，扔掉穷气</div></div><span class="click-hint">></span></div>
+            <div class="hot-item" onclick="showDetail('chusi',5)"><div class="rank rank-other">开市</div><div class="hot-content"><div class="hot-title">🏪 店铺开市</div><div class="hot-desc">商家开业，营业第一天</div></div><span class="click-hint">></span></div>
         </div>
         
-        <div class="footer">🧧 马年大吉！</div>
+        <div class="card">
+            <div class="card-title"><span class="icon">🗺️</span>正月初三风俗</div>
+            <div class="hot-item" onclick="showDetail('chusan',1)"><div class="rank rank-1">老鼠</div><div class="hot-content"><div class="hot-title">🐀 老鼠娶亲</div><div class="hot-desc">早睡晚起，不打扰老鼠</div></div><span class="click-hint">></span></div>
+            <div class="hot-item" onclick="showDetail('chusan',2)"><div class="rank rank-2">赤口</div><div class="hot-content"><div class="hot-title">🔴 贴赤口</div><div class="hot-desc">南方贴红纸，求和气</div></div><span class="click-hint">></span></div>
+            <div class="hot-item" onclick="showDetail('chusan',3)"><div class="rank rank-3">门神</div><div class="hot-content"><div class="hot-title">🚪 烧门神纸</div><div class="hot-desc">烧掉门神，准备出门</div></div><span class="click-hint">></span></div>
+            <div class="hot-item" onclick="showDetail('chusan',4)"><div class="rank rank-other">合子</div><div class="hot-content"><div class="hot-title">🥟 吃合子</div><div class="hot-desc">寓意和和美美，北方习俗</div></div><span class="click-hint">></span></div>
+        </div>
+        
+        <div class="card">
+            <div class="card-title"><span class="icon">🗺️</span>正月初二风俗</div>
+            <div class="hot-item" onclick="showDetail('chuer',1)"><div class="rank rank-1">女儿</div><div class="hot-content"><div class="hot-title">👩‍👩‍👧 回娘家</div><div class="hot-desc">出嫁女儿携礼回娘家拜年</div></div><span class="click-hint">></span></div>
+            <div class="hot-item" onclick="showDetail('chuer',2)"><div class="rank rank-2">祭祖</div><div class="hot-content"><div class="hot-title">🙏 祭祖/上坟</div><div class="hot-desc">带供品祭拜祖先</div></div><span class="click-hint">></span></div>
+            <div class="hot-item" onclick="showDetail('chuer',3)"><div class="rank rank-3">开年</div><div class="hot-content"><div class="hot-title">🍖 粤桂：开年饭</div><div class="hot-desc">祭祀后全家聚餐</div></div><span class="click-hint">></span></div>
+            <div class="hot-item" onclick="showDetail('chuer',4)"><div class="rank rank-other">忌</div><div class="hot-content"><div class="hot-title">⚠️ 忌讳</div><div class="hot-desc">不动剪刀、不扫地、不借钱</div></div><span class="click-hint">></span></div>
+        </div>
+        
+        <div class="card">
+            <div class="card-title"><span class="icon">🗺️</span>正月初一风俗</div>
+            <div class="hot-item" onclick="showDetail('custom',1)"><div class="rank rank-1">北方</div><div class="hot-content"><div class="hot-title">🧧 北方 · 吃饺子</div><div class="hot-desc">形如元宝，寓意招财进宝</div></div><span class="click-hint">></span></div>
+            <div class="hot-item" onclick="showDetail('custom',2)"><div class="rank rank-2">南方</div><div class="hot-content"><div class="hot-title">🍜 南方 · 年糕/汤圆</div><div class="hot-desc">年糕寓意年年高 · 汤圆代表团圆</div></div><span class="click-hint">></span></div>
+            <div class="hot-item" onclick="showDetail('custom',3)"><div class="rank rank-3">东北</div><div class="hot-content"><div class="hot-title">🎆 东北 · 踩高跷/扭秧歌</div><div class="hot-desc">热烈喜庆的集体活动</div></div><span class="click-hint">></span></div>
+            <div class="hot-item" onclick="showDetail('custom',4)"><div class="rank rank-other">广东</div><div class="hot-content"><div class="hot-title">🧧 广东 · 拜年/逗利是</div><div class="hot-desc">红包习俗，金额讲究"意头"</div></div><span class="click-hint">></span></div>
+        </div>
+        
+        <div class="card">
+            <div class="card-title"><span class="icon">🔥</span>微博热搜</div>
+            <div class="hot-item" onclick="showDetail('weibo',1)"><div class="rank rank-1">1</div><div class="hot-content"><div class="hot-title">#王菲 春晚# <span class="platform-tag tag-weibo">微博</span></div><div class="hot-desc">12.6亿阅读 · 326万讨论</div></div><span class="click-hint">></span></div>
+            <div class="hot-item" onclick="showDetail('weibo',2)"><div class="rank rank-2">2</div><div class="hot-content"><div class="hot-title">#郭富城王一博 闪耀动起来# <span class="platform-tag tag-weibo">微博</span></div><div class="hot-desc">8.3亿阅读</div></div><span class="click-hint">></span></div>
+            <div class="hot-item" onclick="showDetail('weibo',3)"><div class="rank rank-3">3</div><div class="hot-content"><div class="hot-title">#春晚分会场# <span class="platform-tag tag-weibo">微博</span></div><div class="hot-desc">5.2亿阅读</div></div><span class="click-hint">></span></div>
+        </div>
+        
+        <div class="card">
+            <div class="card-title"><span class="icon">🤖</span>AI/科技热点</div>
+            <div class="hot-item" onclick="showDetail('ai',1)"><div class="rank rank-1">1</div><div class="hot-content"><div class="hot-title">春晚机器人表演 <span class="platform-tag tag-ai">科技</span></div><div class="hot-desc">具身机器人首次多企业同台 · 1.8亿</div></div><span class="click-hint">></span></div>
+            <div class="hot-item" onclick="showDetail('ai',2)"><div class="rank rank-2">2</div><div class="hot-content"><div class="hot-title">8K+AI技术应用 <span class="platform-tag tag-ai">科技</span></div><div class="hot-desc">国产8K设备全链路 · 1.2亿</div></div><span class="click-hint">></span></div>
+        </div>
+        
+        <button class="refresh-btn" onclick="refreshData()">🔄 刷新数据</button>
+        <div class="footer">点击条目查看详情和热评 · 🧧 马年大吉！</div>
     </div>
-</body>
-</html>
+    
+    <div class="modal-overlay" id="modal" onclick="closeModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-header"><div class="modal-title" id="modalTitle">详情</div><button class="modal-close" onclick="closeModal()">×</button></div>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+    
+    <script>
+    const detailData={
+        weibo:{
+            1:{title:'#王菲 春晚#',tags:['微博','明星','春晚'],readCount:'12.6亿阅读',content:'<h3>热度分析</h3><p>王菲第六次登上春晚，演唱《你我经历的一刻》，来自北大毕业生乐队ZaZaZsu。</p>',comments:[{user:'娱乐观察员',text:'王菲一开口，春晚弹幕直接炸屏！',likes:'2.3万'},{user:'资深娱乐编辑',text:'六登春晚，天后统治力！',likes:'1.8万'}]},
+            2:{title:'#郭富城王一博 闪耀动起来#',tags:['微博','明星'],readCount:'8.3亿阅读',content:'<h3>节目</h3><p>郭富城与王一博合作歌舞，两代舞台王者合作。</p>',comments:[{user:'舞蹈爱好者',text:'郭富城60岁还能跳成这样！',likes:'1.5万'}]},
+            3:{title:'#春晚分会场#',tags:['微博','春晚'],readCount:'5.2亿阅读',content:'<h3>四大分会场</h3><p>哈尔滨·义乌·合肥·宜宾</p>',comments:[{user:'哈尔滨人',text:'欢迎来冰雪大世界！',likes:'8900'}]}
+        },
+        ai:{
+            1:{title:'春晚机器人表演',tags:['科技','AI','春晚'],readCount:'1.8亿阅读',content:'<h3>技术亮点</h3><p>具身机器人首次四家企业同台竞技</p>',comments:[{user:'科技爱好者',text:'中国机器人太牛了！',likes:'2.3万'}]},
+            2:{title:'8K+AI技术应用',tags:['科技','8K'],readCount:'1.2亿阅读',content:'<h3>技术突破</h3><p>国产8K设备首次全链路应用</p>',comments:[{user:'电视从业者',text:'8K画质太清晰了！',likes:'9800'}]}
+        },
+        chuwu:{
+            1:{title:'🧧 迎财神',tags:['初五','财神','民俗'],content:'<h3>📍 地域</h3><p>全国</p><h3>🗺️ 地图</h3><div style="background:#f5f5f5;padding:15px;border-radius:8px;text-align:center;margin:10px 0;"><p style="color:#666;">🗺️ 全国</p><p style="font-size:12px;color:#999;">迎财神祈福</p></div><h3>🧧 风俗介绍</h3><p>正月初六"迎财神"，是春节最重要的习俗之一。民间传说财神在初五这天降临人间，人们会摆上丰盛的供品，燃放鞭炮，迎接财神到来，祈求新一年财运亨通、富贵盈门。</p><h3>🎊 习俗</h3><p>• 早起放鞭炮（接财神）<br>• 摆供品（水果、糕点、酒）<br>• 贴财神像<br>• 祈求新年发大财</p>',comments:[{user:'财神迷',text:'初五迎财神，发发发！',likes:'3.2万'},{user:'打工人',text:'希望财神爷关照！',likes:'2.5万'},{user:'小老板',text:'生意兴隆！',likes:'1.8万'}]},
+            2:{title:'🔴 破五',tags:['初五','破五','民俗'],content:'<h3>📍 地域</h3><p>全国</p><h3>🗺️ 地图</h3><div style="background:#f5f5f5;padding:15px;border-radius:8px;text-align:center;margin:10px 0;"><p style="color:#666;">🗺️ 全国</p><p style="font-size:12px;color:#999;">破除禁忌</p></div><h3>🧧 风俗介绍</h3><p>正月初六俗称"破五"，意味着春节期间的各种禁忌可以破除。之前几天不能做的事情，如动剪刀、扫地、倒垃圾等，到初五都可以做了。</p><h3>⚫ 破除禁忌</h3><p>• 可以动剪刀<br>• 可以扫地<br>• 可以倒垃圾<br>• 可以出门走亲访友</p>',comments:[{user:'传统派',text:'破五了，正常生活恢复！',likes:'2.1万'},{user:'上班族',text:'假期结束，准备上班！',likes:'1.6万'}]},
+            3:{title:'🏪 店铺开市',tags:['初五','开市','商家'],content:'<h3>📍 地域</h3><p>全国商家</p><h3>🗺️ 地图</h3><div style="background:#f5f5f5;padding:15px;border-radius:8px;text-align:center;margin:10px 0;"><p style="color:#666;">🗺️ 全国商铺</p><p style="font-size:12px;color:#999;">商家开业</p></div><h3>🧧 风俗介绍</h3><p>正月初六是商家"开市"的日子。经过初一到初四的休息，店铺在这天重新开业，迎接财神，祈求新年生意兴隆、财源广进。</p><h3>🎊 仪式</h3><p>• 放鞭炮庆祝<br>• 贴红对联<br>• 请客吃饭<br>• 恢复正常营业</p>',comments:[{user:'生意人',text:'开市大吉！',likes:'2.8万'},{user:'店员A',text:'又要上班了！',likes:'1.9万'}]},
+            4:{title:'🗑️ 送穷',tags:['初五','送穷','民俗'],content:'<h3>📍 地域</h3><p>全国</p><h3>🗺️ 地图</h3><div style="background:#f5f5f5;padding:15px;border-radius:8px;text-align:center;margin:10px 0;"><p style="color:#666;">🗺️ 全国</p><p style="font-size:12px;color:#999;">送穷迎富</p></div><h3>🧧 风俗介绍</h3><p>正月初六"送穷"，要把穷鬼送走。人们会打扫房间，把垃圾倒掉，寓意把贫穷、晦气都送走，迎接富贵到来。</p><h3>🧹 习俗</h3><p>• 打扫卫生<br>• 倒垃圾<br>• 送穷出门<br>• 迎接福气</p>',comments:[{user:'家政达人',text:'初五大扫除！',likes:'1.8万'},{user:'传统派',text:'送穷迎富！',likes:'1.3万'}]},
+            5:{title:'🥟 吃饺子',tags:['初五','饺子','北方'],content:'<h3>📍 地域</h3><p>北方地区</p><h3>🗺️ 地图</h3><div style="background:#f5f5f5;padding:15px;border-radius:8px;text-align:center;margin:10px 0;"><p style="color:#666;">🗺️ 北方地区</p><p style="font-size:12px;color:#999;">北京、天津、河北</p></div><h3>🧧 风俗介绍</h3><p>正月初六北方吃饺子，俗称"捏小人嘴"。包饺子时要用手把饺子边捏紧，寓意捏住小人的嘴，不让小人搬弄是非。</p><h3>🍽️ 吃法</h3><p>猪肉白菜、韭菜鸡蛋、三鲜等馅料。</p>',comments:[{user:'北方人',text:'破五吃饺子！',likes:'2.3万'},{user:'吃货一枚',text:'饺子最好吃！',likes:'1.5万'}]},
+            6:{title:'🎆 放鞭炮',tags:['初五','鞭炮','庆祝'],content:'<h3>📍 地域</h3><p>全国</p><h3>🗺️ 地图</h3><div style="background:#f5f5f5;padding:15px;border-radius:8px;text-align:center;margin:10px 0;"><p style="color:#666;">🗺️ 全国</p><p style="font-size:12px;color:#999;">庆祝活动</p></div><h3>🧧 风俗介绍</h3><p>正月初六放鞭炮是迎财神的重要组成部分。人们相信鞭炮声可以驱赶邪气，迎接财神，带来好运。</p><h3>🎊 寓意</h3><p>• 迎接财神<br>• 驱赶邪气<br>• 庆祝新年<br>• 带来好运</p>',comments:[{user:'热闹爱好者',text:'放鞭炮最有过年气氛！',likes:'2.5万'},{user:'环保派',text:'注意环保和安全！',likes:'1.2万'}]}
+        },
+        chusi:{
+            1:{title:'🧧 迎灶神',tags:['初四','灶神','民俗'],content:'<h3>📍 地域</h3><p>全国大部分地区</p><h3>🗺️ 地图</h3><div style="background:#f5f5f5;padding:15px;border-radius:8px;text-align:center;margin:10px 0;"><p style="color:#666;">🗺️ 全国</p><p style="font-size:12px;color:#999;">传统习俗</p></div><h3>🧧 风俗介绍</h3><p>正月初四是"迎灶神日"，灶王爷会在这一天返回人间。人们会准备丰盛的祭品迎接灶神，祈求新一年五谷丰登、灶火旺盛。</p>',comments:[{user:'传统老人',text:'迎灶神，求平安！',likes:'3.2万'}]},
+            2:{title:'🚪 接五路',tags:['初四','五路','财神'],content:'<h3>📍 地域</h3><p>全国（商家为主）</p><h3>🧧 风俗介绍</h3><p>正月初四"接五路"，即迎接五路财神（东、西、南、北、中）。商家会在这一天摆上供品，祈求新年生意兴隆、财源广进。</p>',comments:[{user:'小老板',text:'接五路，发大财！',likes:'2.8万'}]},
+            3:{title:'🥘 吃折箩',tags:['初四','折箩','民俗'],content:'<h3>📍 地域</h3><p>北方地区</p><h3>🧧 风俗介绍</h3><p>正月初四吃"折箩"，就是把前几天的剩菜剩饭混在一起吃掉，寓意"年年有余"、"不浪费粮食"。</p>',comments:[{user:'北方人',text:'折箩才是年味！',likes:'2.3万'}]},
+            4:{title:'🗑️ 扔穷',tags:['初四','扔穷','民俗'],content:'<h3>📍 地域</h3><p>全国</p><h3>🧧 风俗介绍</h3><p>正月初四"扔穷"，就是在这天打扫卫生，把垃圾和"穷气"都扔掉，寓意新一年贫穷远离、富贵到来。</p>',comments:[{user:'家政达人',text:'初四大扫除！',likes:'1.8万'}]},
+            5:{title:'🏪 店铺开市',tags:['初四','开市','商家'],content:'<h3>📍 地域</h3><p>全国（商家）</p><h3>🧧 风俗介绍</h3><p>正月初四很多商家会选择在这一天开业，迎接灶神和财神，祈求新年生意兴隆。</p>',comments:[{user:'生意人',text:'初四开市，大吉大利！',likes:'2.5万'}]}
+        },
+        chusan:{
+            1:{title:'🐀 老鼠娶亲',tags:['初三','老鼠娶亲','民俗'],content:'<h3>📍 地域</h3><p>全国大部分地区</p><h3>🧧 风俗介绍</h3><p>正月初三是"老鼠娶亲日"，传说这天晚上老鼠会举办婚礼。人们会早睡晚起，不打扰老鼠的好事。</p>',comments:[{user:'传统老人',text:'小时候妈妈说初三要早点睡',likes:'2.8万'}]},
+            2:{title:'🔴 贴赤口',tags:['初三','赤口','民俗'],content:'<h3>📍 地域</h3><p>南方地区（港粤闽）</p><h3>🧧 风俗介绍</h3><p>正月初三"贴赤口"，在红纸上写上吉祥话贴于门上，寓意新一年不招口舌是非。</p>',comments:[{user:'广东人',text:'初三贴赤口，新年不吵架！',likes:'2.3万'}]},
+            3:{title:'🚪 烧门神纸',tags:['初三','门神','民俗'],content:'<h3>📍 地域</h3><p>部分地区</p><h3>🧧 风俗介绍</h3><p>正月初三是"烧门神纸"的日子，人们会在门口烧掉门神画像。</p>',comments:[{user:'农村娃',text:'小时候看爷爷烧门神',likes:'1.9万'}]},
+            4:{title:'🥟 吃合子',tags:['初三','合子','北方'],content:'<h3>📍 地域</h3><p>北方地区</p><h3>🧧 风俗介绍</h3><p>正月初三北方有吃"合子"的习俗，寓意"和和美美"、"合家团圆"。</p>',comments:[{user:'北方人',text:'初三必须吃合子！',likes:'2.1万'}]}
+        },
+        chuer:{
+            1:{title:'👩‍👩‍👧 回娘家',tags:['初二','回门','民俗'],content:'<h3>📍 地域</h3><p>全国大部分地区</p><h3>🧧 风俗介绍</h3><p>正月初二是"回门日"，出嫁的女儿会带着丈夫和孩子一起回娘家拜年。</p>',comments:[{user:'出嫁女',text:'每年初二最期待回娘家！',likes:'3.2万'}]},
+            2:{title:'🙏 祭祖上坟',tags:['初二','祭祖','上坟'],content:'<h3>📍
