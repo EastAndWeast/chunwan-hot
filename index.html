@@ -164,4 +164,42 @@
         },
         chuer:{
             1:{title:'👩‍👩‍👧 回娘家',tags:['初二','回门','民俗'],content:'<h3>📍 地域</h3><p>全国大部分地区</p><h3>🧧 风俗介绍</h3><p>正月初二是"回门日"，出嫁的女儿会带着丈夫和孩子一起回娘家拜年。</p>',comments:[{user:'出嫁女',text:'每年初二最期待回娘家！',likes:'3.2万'}]},
-            2:{title:'🙏 祭祖上坟',tags:['初二','祭祖','上坟'],content:'<h3>📍
+            2:{title:'🙏 祭祖上坟',tags:['初二','祭祖','上坟'],content:'<h3>📍            3:{title:'🙏 祭祖上坟',tags:['初二','祭祖','上坟'],content:'<h3>📍 地域</h3><p>部分地区</p><h3>🧧 风俗介绍</h3><p>正月初二要祭祖，带上供品去上坟，表达对祖先的思念。</p>'},
+            4:{title:'🍖 开年饭',tags:['初二','开年饭','粤桂'],content:'<h3>📍 地域</h3><p>广东、广西</p><h3>🧧 风俗介绍</h3><p>正月初二吃"开年饭"，祭祀后全家聚餐，寓意新一年正式开始。</p>'}
+        }
+    };
+
+    function showDetail(type, id) {
+        var data = detailData[type] && detailData[type][id];
+        if (!data) return;
+        
+        document.getElementById('modalTitle').textContent = data.title;
+        
+        var tags = data.tags ? data.tags.map(function(t){return '<span class="modal-tag">'+t+'</span>';}).join('') : '';
+        var readCount = data.readCount ? '<p style="color:#999;font-size:12px;margin-top:5px;">'+data.readCount+'</p>' : '';
+        
+        var html = tags + readCount + data.content;
+        
+        if (data.comments) {
+            html += '<div class="comment-section"><h3>💬 热评</h3>';
+            data.comments.forEach(function(c){
+                html += '<div class="comment-item"><div class="comment-header"><div class="comment-avatar">'+c.user.charAt(0)+'</div><div class="comment-user">'+c.user+'</div></div><div class="comment-content">'+c.text+'</div><div class="comment-likes">❤️ '+c.likes+'</div></div>';
+            });
+            html += '</div>';
+        }
+        
+        document.getElementById('modalBody').innerHTML = html;
+        document.getElementById('modal').classList.add('active');
+    }
+
+    function closeModal(e) {
+        if (e && e.target !== e.currentTarget) return;
+        document.getElementById('modal').classList.remove('active');
+    }
+
+    function refreshData() {
+        alert('数据刷新功能需要后端支持，当前为静态页面');
+    }
+    </script>
+</body>
+</html>
