@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>正月初七 · 春节风俗</title>
+    <title>正月初八 · 春节风俗</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", Arial, sans-serif; background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); min-height: 100vh; padding: 16px; }
@@ -60,8 +60,17 @@
 </head>
 <body>
     <div class="container">
-        <div class="header"><h1>🧧 正月初六 · 春节风俗</h1><div class="year">2026 丙午马年 · 农历新年马日</div>
-        <div class="update-time" id="updateTime">最后更新：09:43 · 点击查看详情和热评</div>
+        <div class="header"><h1>🧧 正月初八 · 春节风俗</h1><div class="year">2026 丙午马年 · 农历新年谷日</div>
+        <div class="update-time" id="updateTime">最后更新：19:34 · 点击查看详情和热评</div>
+        
+        <div class="card">
+            <div class="card-title"><span class="icon">🗺️</span>正月初八风俗</div>
+            <div class="hot-item" onclick="showDetail('chuba',1)"><div class="rank rank-1">谷日</div><div class="hot-content"><div class="hot-title">🌾 谷日</div><div class="hot-desc">谷子的生日，珍惜粮食</div></div><span class="click-hint">></span></div>
+            <div class="hot-item" onclick="showDetail('chuba',2)"><div class="rank rank-2">顺星</div><div class="hot-content"><div class="hot-title">⭐ 顺星</div><div class="hot-desc">祭拜星神，求吉星高照</div></div><span class="click-hint">></span></div>
+            <div class="hot-item" onclick="showDetail('chuba',3)"><div class="rank rank-3">观谷</div><div class="hot-content"><div class="hot-title">🌾 观谷</div><div class="hot-desc">出门看稻谷长势</div></div><span class="click-hint">></span></div>
+            <div class="hot-item" onclick="showDetail('chuba',4)"><div class="rank rank-other">食谷</div><div class="hot-content"><div class="hot-title">🍚 食谷</div><div class="hot-desc">食用五谷杂粮，寓意丰收</div></div><span class="click-hint">></span></div>
+            <div class="hot-item" onclick="showDetail('chuba',5)"><div class="rank rank-other">占谷</div><div class="hot-content"><div class="hot-title">📊 占谷</div><div class="hot-desc">占卜当年粮食收成</div></div><span class="click-hint">></span></div>
+        </div>
         
         <div class="card">
             <div class="card-title"><span class="icon">🗺️</span>正月初六风俗</div>
@@ -174,6 +183,13 @@
             1:{title:'👩‍👩‍👧 回娘家',tags:['初二','回门','民俗'],content:'<h3>📍 地域</h3><p>全国大部分地区</p><h3>🧧 风俗介绍</h3><p>正月初二是"回门日"，出嫁的女儿会带着丈夫和孩子一起回娘家拜年。</p>',comments:[{user:'出嫁女',text:'每年初二最期待回娘家！',likes:'3.2万'}]},
             2:{title:'🙏 祭祖上坟',tags:['初二','祭祖','上坟'],content:'<h3>📍            3:{title:'🙏 祭祖上坟',tags:['初二','祭祖','上坟'],content:'<h3>📍 地域</h3><p>部分地区</p><h3>🧧 风俗介绍</h3><p>正月初二要祭祖，带上供品去上坟，表达对祖先的思念。</p>'},
             4:{title:'🍖 开年饭',tags:['初二','开年饭','粤桂'],content:'<h3>📍 地域</h3><p>广东、广西</p><h3>🧧 风俗介绍</h3><p>正月初二吃"开年饭"，祭祀后全家聚餐，寓意新一年正式开始。</p>'}
+        },
+        chuba:{
+            1:{title:'🌾 谷日',tags:['初八','谷日','民俗'],content:'<h3>📍 地域</h3><p>全国</p><h3>🗺️ 地图</h3><div style="background:#f5f5f5;padding:15px;border-radius:8px;text-align:center;margin:10px 0;"><p style="color:#666;">🗺️ 全国</p><p style="font-size:12px;color:#999;">谷子生日</p></div><h3>🧧 风俗介绍</h3><p>正月初八是"谷日"，传说谷子的生日。人们珍惜粮食，寓意新一年五谷丰登、风调雨顺。</p><h3>🎊 习俗</h3><p>• 观谷<br>• 食谷<br>• 顺星<br>• 占谷<br>• 珍惜粮食</p>',comments:[{user:'农民的儿子',text:'粒粒皆辛苦！',likes:'3.2万'},{user:'节约达人',text:'珍惜每一粒粮食！',likes:'2.5万'},{user:'传统派',text:'谷日快乐！',likes:'1.8万'}]},
+            2:{title:'⭐ 顺星',tags:['初八','顺星','民俗'],content:'<h3>📍 地域</h3><p>全国</p><h3>🗺️ 地图</h3><div style="background:#f5f5f5;padding:15px;border-radius:8px;text-align:center;margin:10px 0;"><p style="color:#666;">🗺️ 全国</p><p style="font-size:12px;color:#999;">祭拜星神</p></div><h3>🧧 风俗介绍</h3><p>正月初八"顺星"，民间有"祭星"的习俗。人们会在这一天祭拜星神，祈求新一年吉星高照、顺顺利利。</p><h3>🎊 习俗</h3><p>• 祭祀星神<br>• 点顺星灯<br>• 祈福平安<br>• 烧香祈愿</p>',comments:[{user:'星象爱好者',text:'顺星祈福！',likes:'2.3万'},{user:'传统派',text:'吉星高照！',likes:'1.9万'}]},
+            3:{title:'🌾 观谷',tags:['初八','观谷','民俗'],content:'<h3>📍 地域</h3><p>全国（农村为主）</p><h3>🗺️ 地图</h3><div style="background:#f5f5f5;padding:15px;border-radius:8px;text-align:center;margin:10px 0;"><p style="color:#666;">🗺️ 农村</p><p style="font-size:12px;color:#999;">查看长势</p></div><h3>🧧 风俗介绍</h3><p>正月初八"观谷"，农民会出门查看稻谷的长势，寓意新一年有个好收成。</p><h3>🎊 寓意</h3><p>• 五谷丰登<br>• 风调雨顺<br>• 粮食丰收<br>• 年年有余</p>',comments:[{user:'农村娃',text:'小时候看爷爷观谷！',likes:'2.1万'},{user:'新农人',text:'祈愿丰收！',likes:'1.6万'}]},
+            4:{title:'🍚 食谷',tags:['初八','食谷','民俗'],content:'<h3>📍 地域</h3><p>全国</p><h3>🗺️ 地图</h3><div style="background:#f5f5f5;padding:15px;border-radius:8px;text-align:center;margin:10px 0;"><p style="color:#666;">🗺️ 全国</p><p style="font-size:12px;color:#999;">食用五谷</p></div><h3>🧧 风俗介绍</h3><p>正月初八"食谷"，人们会食用五谷杂粮，寓意新一年五谷丰登、丰衣足食。</p><h3>🍚 五谷</h3><p>稻、黍、稷、麦、菽（豆类）</p>',comments:[{user:'养生达人',text:'五谷杂粮最健康！',likes:'2.4万'},{user:'美食家',text:'粒粒皆辛苦！',likes:'1.8万'}]},
+            5:{title:'📊 占谷',tags:['初八','占谷','民俗'],content:'<h3>📍 地域</h3><p>全国（农村为主）</p><h3>🗺️ 地图</h3><div style="background:#f5f5f5;padding:15px;border-radius:8px;text-align:center;margin:10px 0;"><p style="color:#666;">🗺️ 农村</p><p style="font-size:12px;color:#999;">占卜收成</p></div><h3>🧧 风俗介绍</h3><p>正月初八"占谷"，农民会占卜当年的粮食收成，祈求新一年五谷丰登。</p><h3>🎊 寓意</h3><p>• 预知丰年<br>• 祈求丰收<br>• 寄托希望<br>• 传统智慧</p>',comments:[{user:'传统派',text:'祈愿丰收年！',likes:'1.9万'},{user:'农村人',text:'希望今年是个好年景！',likes:'1.5万'}]}
         },
         chuqi:{
             1:{title:'🧧 人日',tags:['初七','人日','民俗'],content:'<h3>📍 地域</h3><p>全国</p><h3>🗺️ 地图</h3><div style="background:#f5f5f5;padding:15px;border-radius:8px;text-align:center;margin:10px 0;"><p style="color:#666;">🗺️ 全国</p><p style="font-size:12px;color:#999;">人的生日</p></div><h3>🧧 风俗介绍</h3><p>正月初七是"人日"，传说女娲在初七造出了人，所以这天是人类的生日。人们会在这天庆祝，祈求平安健康。</p><h3>🎊 习俗</h3><p>• 吃七宝羹<br>• 摊煎饼<br>• 登高祈福<br>• 戴人胜<br>• 互相祝福</p>',comments:[{user:'传统派',text:'人日快乐！',likes:'3.5万'},{user:'打工人',text:'假期最后一天！',likes:'2.8万'},{user:'健康控',text:'祈福平安健康！',likes:'2.1万'}]},
